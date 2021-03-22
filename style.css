@@ -6,12 +6,13 @@ html body{
     padding: 0; */
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 }
 body{
     /* background-color: white; */
     margin: 0;
     padding: 0;
-    background: linear-gradient(#141e30, #243b55);
+    /* background: linear-gradient(#141e30, #243b55); */
 }
 .header{
     display: flex;
@@ -246,4 +247,32 @@ body{
   /* ------------icon--------------- */
   .fas.fa-caret-down{
     margin-left: 10px;
+  }
+  /* --------------Home page ----------------- */
+  /* ------------------------------------------ */
+  /* ---------------Header--------------------- */
+  .f-header .btn{
+    background-color: #2571d6;
+    color: white;
+    font-weight: 600;
+    margin-top: 50px;
+    border-radius: 10px ;
+    padding: 10px 20px;
+  }
+  .f-header .link{
+    margin-top: 20px;
+  }
+  .f-header{
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    background: rgb(211, 231, 253) ; 
+  }
+  .f-header p{
+    margin-top: 20px;
+    color: black;
+  }
+  .right-header{
+    margin-top: 20px;
   }
