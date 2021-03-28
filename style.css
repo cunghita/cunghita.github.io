@@ -280,14 +280,14 @@ body{
     margin-top: 20px;
   }
   #chartContainer1{
-    margin-left: 900px;
+    margin-left: 100px;
     height: 300px;
     max-width: 40%;
   }
   #chartContainer2{
-    margin-left: 1000px;
-    height: 400px;
-    max-width: 33%;
+    margin-left: 100px;
+    /* height: 300px;
+    width: 33%; */
   }
 /* -----------------Content------------------- */
 .content-layout{
@@ -308,4 +308,253 @@ body{
 }
 .column-item p{
   margin-top: 10px;
+}
+/* ---------------------------------- */
+/* ----------form-information-------- */
+/* ---------------------------------- */
+.form-info {
+  align-items: center;
+  /* background: #D8AA96; */
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  /* weight: 100vw; */
+}
+
+.signup-container {
+  display: grid;
+  grid-template-areas: "left right";
+  margin-top: -70px;
+  max-width: 900px;
+  /* height: 500px; */
+}
+.right-container {
+  /* background: #f9c7c2; */
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 100%;
+}
+.right-container h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 100px;
+}
+.right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.right-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+.right-container input, .right-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+.right-container header {
+  padding: 40px;
+}
+.right-container label, .right-container input, .right-container .s-photo {
+  width: 176px;
+}
+.right-container .pets-photo {
+  align-items: center;
+  display: grid;
+  grid-template-areas: ". .";
+}
+.right-container .pets-photo button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}
+.right-container .pets-photo button i {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+}
+.right-container .pets-weight .radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.right-container footer {
+  align-items: center;
+  background: #fff;
+  display: grid;
+  padding: 5px 40px;
+}
+.right-container footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Montserrat", sans-serif;
+}
+.right-container footer #back {
+  background: #fff;
+  transition: 0.2s all ease-in-out;
+}
+.right-container footer #back:hover {
+  background: #171A2B;
+  color: white;
+}
+.right-container footer #next {
+  background: #807182;
+  border: 1px solid transparent;
+  color: #fff;
+}
+.right-container footer #next:hover {
+  background: #171A2B;
+}
+
+.pets-name2 label, .pets-name label, .pets-breed label, .pets-birthday label, .pets-gender label, .pets-spayed-neutered label, .pets-weight label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.radio-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type=radio] {
+  display: none;
+}
+
+.radio-container input[type=radio]:checked + label {
+  background: #F7B1AB;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pets-breed select{
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.SL{
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.radio-container2 {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container2 label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 66px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container2 input[type=radio] {
+  display: none;
+}
+
+.radio-container2 input[type=radio]:checked + label {
+  background: #F7B1AB;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.disclaimer2 input[type=checkbox]{
+  height: 14px;
+  line-height: 0px;
+  width: 50px;
+  margin-top: 10px;
+  padding: 5px;
+  outline: none;
+}
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  background-image: url(/S/Chart/img/question-mark.png);
+  background-size: cover;
+  background-position: center;
+  /* margin-left: 500px ;
+  margin-top: 200px; */
+}
+
+.avatar::before,
+.avatar::after {
+  --scale: 0;
+  --arrow-size: 10px;
+  --tooltip-color: #333;
+
+  position: absolute;
+  top: -.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transition: 150ms transform;
+  transform-origin: bottom center;
+}
+
+.avatar::before {
+  --translate-y: calc(-100% - var(--arrow-size));
+
+  content: attr(data-tooltip);
+  color: white;
+  padding: 30px;
+  border-radius: .3rem;
+  text-align: center;
+  width: max-content;
+  max-width: 500px;
+  background: var(--tooltip-color);
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  --scale: 1;
+}
+
+.avatar::after {
+  --translate-y: calc(-1 * var(--arrow-size));
+
+  content: '';
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
 }

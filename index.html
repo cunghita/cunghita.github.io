@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="templatemo-style.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
-    <script src="/S/"></script>
-    <script type="text/javascript" src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="canvasjs-3.2.11/canvasjs.min.js"></script>
+    <script type="text/javascript" src="/S/Chart/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/S/Chart/canvasjs-3.2.11/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -47,7 +46,7 @@
       <li><a href="#">Liên hệ</a></li>
     </ul>
   </div>
-  <div class="login-box">
+  <!-- <div class="login-box">
     <h2>Nhập thông tin</h2>
     <form action="#">
       <div class="user-box">
@@ -57,8 +56,10 @@
       <div class="user-box">
         <input type="text" name="Y2" id="Y2" autocomplete="off">
         <label>Thông số 2</label>
+        <input type="text" name="Y3" id="Y3" autocomplete="off">
+        <label>Phần trăm</label>
       </div>            
-        <!-- <button onclick="Chart()">Xác nhận</button> -->
+        
         <a href="#" onclick="Chart()">
           <span></span>
           <span></span>
@@ -67,13 +68,168 @@
           Submit
         </a>
     </form>
-  </div>
+  </div> -->
+  <div class="form-info">
+  <div class='signup-container'>
+    <div class='right-container'>
+        <h1>FRACTURE RISK CALCULATOR</h1>
+        <h1>Fill out the following to estimate your fracture risk</h1>
+        <div class='set'>
+          <div class='pets-name'>
+            <label for='pets-name'>Full Name
+                (optional)</label>
+            <input id='name' placeholder="Full Name" type='text'>
+          </div>
+          <div class="pets-name">
+              <label for="">Fractures since the age of 50
+              </label>
+              <!-- <div style="font-size: 0.8em;">(excluding major trauma, e.g. car accidents)</div> -->
+              <select name="" id="Fra-50" class="SL">
+                  <option value="0">1</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3 or more">3 or more</option>
+              </select>
+          </div>
+        </div>
+        <div class='set'>
+          <div class='pets-breed'>
+            <label for='pets-breed'>Age</label>
+            <!-- <input id='pets-breed' placeholder="Pet's breed" type='text'> -->
+            <select name="" id="pets-breed" class="SL">
+                <option value="Select Age">Select Age</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+                <option value="71">70</option>
+                <option value="72">72</option>
+                <option value="73">73</option>
+                <option value="74">74</option>
+                <option value="75">75</option>
+                <option value="76">76</option>
+                <option value="77">77</option>
+                <option value="78">78</option>
+                <option value="79">79</option>
+                <option value="80">80</option>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="83">83</option>
+                <option value="84">84</option>
+                <option value="85">85</option>
+                <option value="86">86</option>
+                <option value="87">87</option>
+                <option value="88">88</option>
+                <option value="89">89</option>
+                <option value="90">90</option>
+                <option value="91">91</option>
+                <option value="92">92</option>
+                <option value="93">93</option>
+                <option value="94">94</option>
+                <option value="95">95</option>
+                <option value="96">96</option>
+            </select>
+          </div>
+          <div class='pets-birthday'>
+            <label for='pets-birthday'>Falls over last 12 months</label>
+            <select name="" id="" class="SL">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 or more</option>
+            </select>
+          </div>
+        </div>
+        <div class='set'>
+          <div class='pets-gender'>
+            <label for='pet-gender-female'>Sex</label>
+            <div class='radio-container'>
+              <input checked='' id='pet-gender-female' name='pet-gender' type='radio' value='female'>
+              <label for='pet-gender-female'>Female</label>
+              <input id='pet-gender-male' name='pet-gender' type='radio' value='male'>
+              <label for='pet-gender-male'>Male</label>
+            </div>
+          </div>
+          <div class='pets-spayed-neutered'>
+            <label for='pet-spayed'>Do you have a
+                Bone Mineral Density (BMD)
+                measurement?</label>
+            <div class='radio-container'>
+              <input checked='' id='Yes' name='spayed-neutered' type='radio' value='Yes' onclick="Visi2()">
+              <label for='Yes'>Yes</label>
+              <input id='No' name='spayed-neutered' type='radio' value='No' onclick="Visi()">
+              <label for='No'>No</label>
+            </div>
+          </div>
+        </div>
+        <div class="set">
+          <div class="pets-name2 hidden">
+            <label for="Weight">Weight</label>
+          <input type="text" name="weight" id="weight" placeholder="kg">
+          </div>
+          <div class='pets-name'>
+            <label for='T-score'>T-scores
+              <div class="avatar" data-tooltip="T-score is the BMD value compared with young normal people of the same sex and general ethnicity. These are usually listed prominently on the BMD report. You must enter the + or - in front of the value as shown."></div>
+            </label>
+            <input id='T-score' type='text'>
+          </div>
+          <div class="pets-name">
+            <label for="BMD">Actual BMD</label>
+          <input type="text" name="BMD" id="BMD" placeholder="g/cm²">
+          </div>
+        </div>
+        <div>OR</div>
+        <div class='pets-spayed-neutered'>
+          <label for='pet-spayed'>Densitometer</label>
+          <div class='radio-container2'>
+            <input checked='' id='Lunar' name='DXA' type='radio' value='by DXA GE Lunar'>
+            <label for='Lunar'>by DXA GE Lunar</label>
+            <input id='Hologic' name='DXA' type='radio' value='by DXA Hologic'>
+            <label for='Hologic'>by DXA Hologic</label>
+          </div>
+        </div>
+        <div class="disclaimer">
+          <div>
+            <h2 style="margin: 10px 0;">Disclaimer</h2>
+            <p>The results produced by our calculator should serve as a guide only.
+               If concerned about your fracture risk, it is also important to consult your doctor or a bone specialist.</p>
+               <div class="disclaimer2">
+                <input type="checkbox" name="disclaimer" class="ip-disclaimer" id="disclaimer" value="Agree">I have read and understand the disclaimer
+               </div>
+          </div>
+        </div>
+      <footer>
+        <div class='set'>
+          <button id='back'>Back</button>
+          <button id='next' onclick="Chart()">Next</button>
+        </div>
+      </footer>  
+      </div> 
+     </div>   
+    </div>
     <div class="tm-paging-links" id = "tog">
       <nav>
         <ul>
           <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Chart1</a></li>
           <li class="tm-paging-item"><a  href="#" class="tm-paging-link">Chart2</a></li>
-          <!-- <li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li> -->
+          <li class="tm-paging-item"><a href="#" class="tm-paging-link">Chart3</a></li>
         </ul>
       </nav>
     </div>
@@ -107,20 +263,33 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body"> -->
-        <div id="tm-gallery-page-chart2" class="tm-gallery-page hidden">
+        <div id="tm-gallery-page-chart2" class="tm-gallery-page hidden" >
         <div id="chartContainer2"></div>
         </div>
+        <div id="tm-gallery-page-chart3" class="tm-gallery-page hidden" style="margin-left: 100px;">
+          <div id="chartContainer3">
+          </div>
+          <img src="/S/Chart/img/blue.png" alt=""> Số người sống sót
+          </div>
       <!-- </div>
     </div>
   </div>
 </div> -->
     <script>
+      function Visi(){
+        $('.pets-name').addClass('hidden');
+        $('.pets-name2').removeClass('hidden');
+      }
+      function Visi2(){
+        $('.pets-name2').addClass('hidden');
+        $('.pets-name').removeClass('hidden');
+      }
         function Chart(){
             // document.getElementById("ivs").style.opacity = 1;
             // document.getElementById("ivs2").style.opacity = 1;
             document.getElementById("tog").style.visibility = 'visible';
-        var y1 = document.getElementById("Y1").value;
-        var y2 = document.getElementById("Y2").value;
+        var y1 = document.getElementById("T-score").value;
+        var y2 = document.getElementById("BMD").value;
         var chart = new CanvasJS.Chart("chartContainer1", {
             animationEnabled: true,
             theme: "light2", // "light1", "light2", "dark1", "dark2"
@@ -146,10 +315,47 @@
             }]
         });
         chart.render(); 
-             
+        // ////////////////////////////////////
+        
+        ////////////////////////////////////////
+        var t = document.getElementById("p-img");
+            if(t == null){
+        var y3 = document.getElementById("name").value;
+    for( var i = 0; i < 10*10; i++) {
+     var row = i / 10;
+     var col = i % 10;
+     if(col == 0 && row > 0) {
+        //document.write("<div style='clear:both'></div>");
+        var para3 = document.createElement("DIV");
+       para3.setAttribute("style","clear:both");
+       document.getElementById("chartContainer3").appendChild(para3);
+     }
+      if (i < y3) {
+         //document.write("<div class='square'></div>");
+         //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
+         var para = document.createElement("IMG");
+        para.setAttribute("src", "/S/Chart/img/blue.png");
+        para.setAttribute("id","p-img");
+        document.getElementById("chartContainer3").appendChild(para);
+      } else {
+         //document.write("<div class='empty-square'></div>");
+         //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
+         var para2 = document.createElement("IMG");
+        para2.setAttribute("src", "/S/Chart/img/purple.png");
+        para2.setAttribute("id","p-img");
+        document.getElementById("chartContainer3").appendChild(para2);
+      
+      }
+   }   
+ }
+
         }  
         // function Chart2(){
+          // document.getElementById("chartContainer2").style.width = '33%';
+          // document.getElementById("chartContainer2").style.height = '300px';
       var chart2 = new CanvasJS.Chart("chartContainer2", {
+        width: 600,
+        height: 300,
       title:{
       	text:"Chart 2"
       },
@@ -171,13 +377,37 @@
       }
       ]
     });
-    chart2.render();   
+    chart2.render();
+//     var y3 = document.getElementById("name").value;
+//     for( var i = 0; i < 10*10; i++) {
+//      var row = i / 10;
+//      var col = i % 10;
+//      if(col == 0 && row > 0) {
+//         //document.write("<div style='clear:both'></div>");
+//         var para3 = document.createElement("DIV");
+//        para3.setAttribute("style","clear:both");
+//        document.getElementById("chartContainer3").appendChild(para3);
+//      }
+//       if (i < y3) {
+//          //document.write("<div class='square'></div>");
+//          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
+//          var para = document.createElement("IMG");
+//         para.setAttribute("src", "/S/Chart/img/blue.png");
+//         document.getElementById("chartContainer3").appendChild(para);
+//       } else {
+//          //document.write("<div class='empty-square'></div>");
+//          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
+//          var para2 = document.createElement("IMG");
+//         para2.setAttribute("src", "/S/Chart/img/purple.png");
+//         document.getElementById("chartContainer3").appendChild(para2);
+      
+//       }
+// }   
   // } 
     $(document).ready(function(){
 			// Handle click on paging links
 			$('.tm-paging-link').click(function(e){
 				e.preventDefault();
-				
 				var page = $(this).text().toLowerCase();
 				$('.tm-gallery-page').addClass('hidden');
 				$('#tm-gallery-page-' + page).removeClass('hidden');
@@ -185,14 +415,6 @@
 				$(this).addClass("active");
 			});
 		});
-    // function Chart2(){
-    //   document.getElementById("chartContainer2").style.opacity = 1;
-    // }
-  //   $('#collapseOne').on("shown.bs.collapse",function(){
-  //     Chart();
-  //    // $('#collapseTwo').off(); // to remove the binded event after the initial rendering if needed
-  // });
         </script>
-        <!-- <div id="chartContainer" style="height: 370px; width: 50%;"></div> -->
 </body>
 </html>
