@@ -205,15 +205,19 @@ body{
     width: 100px;
   }
   /* -----------------menu----------------------- */
+  /* #menu {
+    position: fixed;
+    width: 100%;
+  } */
   #menu ul {
-    background: #1F568B;
+    background: #4c4c6b;
     list-style-type: none;
     text-align: center;
   }
   #menu li {
     color: #f1f1f1;
     display: inline-block;
-    width: 120px;
+    width: 170px;
     height: 40px;
     line-height: 40px;
     margin-left: -5px;
@@ -589,4 +593,44 @@ body{
   border: var(--arrow-size) solid transparent;
   border-top-color: var(--tooltip-color);
   transform-origin: top center;
+}
+/* --------------------------- */
+/* ------introduce------------ */
+.main-content{
+  font-size: 16px;
+}
+.emphasise{
+  border-left: 4px solid #225DB5;
+  display: inline-block;
+  padding: 20px;
+}
+.screen-only{
+  background-color: rgb(211, 231, 253);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.header-content{
+  min-height: calc(100vh - 700px);
+}
+.main-content ul{
+  list-style-image: url('/S/Chart/img/bullet-plus.png');
+}
+.main-content ul li a{
+  text-decoration: none;
+}
+.main-content ul li a:hover{
+  text-decoration: underline;
+}
+#howthiswork a{
+  text-decoration: none;
+}
+#howthiswork a:hover{
+  text-decoration: underline;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
