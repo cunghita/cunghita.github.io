@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="templatemo-style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <script type="text/javascript" src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="canvasjs-3.2.11/canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="queries.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+            <img class="Logo" src="img/prostate-angle-man_1.png" alt="logo">
+            <img class="Logo2" src="img/NHS.jpg" alt="logo" style="width: 150px;">
+  </div>
+    <div id="menu">
+     
+    <?php
+    require_once('include/menu.php');
+     ?>
+  </div>
+  <div class="f-header">
+      <div class="right-header">
+        <h2>Chẩn đoán loãng xương</h2>
+        <p>Một mô hình tiên lượng riêng cho mọi người để chẩn đoán mắc bệnh loãng xương </p>
+        <div class="link"> 
+            <a href="https://elifesciences.org/articles/61142">Dựa theo nghiên cứu của các nhà khoa học</a>
+        </div>
+            <a href="index.html" class="btn">Bắt đầu chẩn đoán</a>
+      </div>
+      <div class="left-header">
+          <img src="img/icon-imagery.png" alt="">
+      </div>
+  </div>
+  <div class="content-layout">
+    <div class="column-item content-one">
+      <h2>Chẩn đoán bệnh loãng xương để làm gì?</h2>
+      <p>Công cụ chẩn đoán bệnh loãng xương là một công cụ để dự đoán các nguy cơ mắc bệnh loãng xương nhằm
+         giúp người bệnh có thể theo dõi để sớm tiếp nhận điều trị nếu có nguy cơ mắc bệnh
+         </p>
+    </div>
+    <div class="column-item content-two">
+      <h2>Làm cách nào để sử dụng Công cụ chẩn đoán bệnh loãng xương?</h2>
+      <p>
+        Nhập thông tin chi tiết về bản thân và các chỉ số yêu cầu của bạn,
+         sau đó chọn xác nhận để để xem ước tính khả năng mắc bệnh của từng loại.
+         Chúng tôi khuyên bệnh nhân nên đọc phần Giới thiệu về Công cụ chẩn đoán trước khi sử dụng công cụ.
+      </p>
+    </div>
+    <div class="column-item content-three">
+      <h3>Công cụ chẩn đoán bệnh loãng xương sẽ cho tôi biết điều gì?</h3>
+      <p>Công cụ chẩn đoán bệnh loãng xương cho bạn thấy các chiến lược quản lý ban đầu khác nhau ảnh hưởng như thế nào đến tỷ lệ nam giới sống sót sau mười và mười lăm năm sau khi chẩn đoán.
+         Dữ liệu không được cá nhân hóa cũng được hiển thị về tác hại tiềm ẩn của từng loại điều trị.
+         Video ngắn này có thể giúp giải thích cách Dự đoán tuyến tiền liệt hoạt động </p>
+    </div>
+  </div>
+  <script>
+    window.onscroll = function() {myFunction()};
+              var header = document.getElementById("menu");
+               var sticky = header.offsetTop;
+
+               function myFunction() {
+                    if (window.pageYOffset > sticky) {
+                      header.classList.add("sticky");
+                        } else {
+                      header.classList.remove("sticky");
+                     }
+                  }
+  </script>
+</body>
+</html>
