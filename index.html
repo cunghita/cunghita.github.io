@@ -65,7 +65,7 @@
   <div class="form-info">
   <div class='signup-container'>
     <div class='right-container'>
-      <form action="xu_ly_form" method="POST">
+      <!-- <form action="xu_ly_form" method="POST"> -->
         <h1>FRACTURE RISK CALCULATOR</h1>
         <h1>Fill out the following to estimate your fracture risk</h1>
         <div class='set'>
@@ -79,10 +79,10 @@
               </label>
               <!-- <div style="font-size: 0.8em;">(excluding major trauma, e.g. car accidents)</div> -->
               <select name="Fra-50" id="Fra-50" class="SL">
-                  <option value="0">1</option>
-                  <option value="1">2</option>
-                  <option value="2">3</option>
-                  <option value="3 or more">3 or more</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3 or more</option>
               </select>
           </div>
         </div>
@@ -90,7 +90,7 @@
           <div class='pets-breed'>
             <label for='pets-breed'>Age</label>
             <!-- <input id='pets-breed' placeholder="Pet's breed" type='text'> -->
-            <select name="age" id="pets-breed" class="SL">
+            <select name="age" id="age" class="SL">
                 <option value="Select Age">Select Age</option>
                 <option value="50">50</option>
                 <option value="51">51</option>
@@ -215,7 +215,7 @@
           <button id='next' onclick="Chart()">Next</button>
         </div>
       </footer> 
-    </form> 
+    <!-- </form>  -->
       </div> 
      </div>   
     </div>
@@ -256,10 +256,69 @@
         function Chart(){
             // document.getElementById("ivs").style.opacity = 1;
             // document.getElementById("ivs2").style.opacity = 1;
+           var age = document.getElementById("age").value;
+           var y1 = document.getElementById("T-score").value;
+           var Pfx = document.getElementById("Fra-50").value;
+           var Fall = document.getElementById("Fall-12").value;
+           ////////////////////table 1/////////////////////////
+            var So5_Any_Women = 0.995750118;
+            var So10_Any_Women = 0.990905138;
+
+            var So5_Hip_Women = 0.999896685;
+            var So10_Hip_Women = 0.999793070;
+
+            var So5_Hip_men = 0.999998862;
+            var So10_Hip_men = 0.999997778;
+
+            var So5_Any_men = 0.999921076;
+            var So10_Any_men = 0.999848975;
+            var y = (b1_Any_Women_BMD * age) + (b2_Any_Women_BMD * y1) + (b3_Any_Women_BMD * Pfx) + (b4_Any_Women_BMD * Fall);
+        ////////////////////table 2//////////////////////
+            var b1_Any_Women_BMD = 0.0321;
+            var b2_Any_Women_BMD = -0.4022;
+            var b3_Any_Women_BMD = 0.5691;
+            var b4_Any_Women_BMD = 0.2038;
+            
+            var b1_Hip_Women_BMD = 0.0507;
+            var b2_Hip_Women_BMD = -0.8417;
+            var b3_Hip_Women_BMD = 0.8127;
+            var b4_Hip_Women_BMD = 0.3614;
+
+            var b1_Hip_men_BMD = 0.107;
+            var b2_Hip_men_BMD = -1.007;
+            var b3_Hip_men_BMD = 0.599;
+            var b4_Hip_men_BMD = 0.212;
+
+            var b1_Any_men_BMD = 0.0883;
+            var b2_Any_men_BMD = -0.2986;
+            var b3_Any_men_BMD = 0.8454;
+            var b4_Any_men_BMD = 0.0981;
+
+        ////////////////table 3///////////////////////
+            var b1_Any_Women_weight = 0.0511;
+            var b2_Any_Women_weight = -0.0099;
+            var b3_Any_Women_weight = 0.6709;
+            var b4_Any_Women_weight = 0.1985;
+            
+            var b1_Hip_Women_weight = 0.0866;
+            var b2_Hip_Women_weight = -0.0444;
+            var b3_Hip_Women_weight = 1.1916;
+            var b4_Hip_Women_BMD = 0.2946;
+
+            var b1_Hip_men_weight = 0.138;
+            var b2_Hip_men_weight = -0.008;
+            var b3_Hip_men_weight = 0.854;
+            var b4_Hip_men_BMD = 0.233;
+
+            var b1_Any_men_BMD = 0.09071;
+            var b2_Any_men_BMD = -0.00765;
+            var b3_Any_men_BMD = 1.00818;
+            var b4_Any_men_BMD = 0.12797;
+
             $('.tm-paging-links').removeClass('hidden');
             $('.tm-gallery-page').removeClass('hidden2');
             document.getElementById("tog").style.visibility = 'visible';
-        var y1 = document.getElementById("T-score").value;
+        // var y1 = document.getElementById("T-score").value;
         var y2 = document.getElementById("BMD").value;
         var chart = new CanvasJS.Chart("chartContainer1", {
             animationEnabled: true,
@@ -278,9 +337,9 @@
                 type: "column",
                 yValueFormatString: "#,##0.0#\"%\"",
                 dataPoints: [
-                    {  label:"10",y: +y1, indexLabel: +y1+"% survive at least 10 years" },	
+                    {  label:"10",y: +y1, indexLabel: +y1+"% survive at least 5 years" },	
                     
-                    { label: "15", y: +y2, indexLabel: +y2+"% survive at least 15 years" }
+                    { label: "15", y: +y2, indexLabel: +y2+"% survive at least 10 years" }
                     
                 ]
             }]
