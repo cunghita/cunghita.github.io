@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="templatemo-style.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
-    <script type="text/javascript" src="/S/Chart/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/S/Chart/canvasjs-3.2.11/canvasjs.min.js"></script>
+    <script type="text/javascript" src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="canvasjs-3.2.11/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -25,15 +25,15 @@
   <div id="menu">
     <ul>
       <li><a href="home.html">Trang chủ</a></li>
-      <li><a href="#">Diễn đàn</a></li>
-      <li><a href="#">Tin tức<i class="fas fa-caret-down"></i></a>
+      <li><a href="#">Giới thiệu<i class="fas fa-caret-down"></i></a>
         <ul class="sub-menu">
-          <li><a href="#">WordPress</a></li>
-          <li><a href="#">SEO</a></li>
-          <li><a href="#">Hosting</a>
+          <li><a href="introduce.html">Phần mềm chẩn đoán</a></li>
+          <li><a href="introduce.html">Loãng xương là gì?</a></li>
+          <li><a href="introduce.html">Dành cho ai?</a>
           </li>
         </ul>
       </li>
+      <li><a href="#">Diễn đàn</a></li>
       <li><a href="#">Hỏi đáp</a></li>
       <li><a href="#">Liên hệ</a></li>
     </ul>
@@ -65,20 +65,28 @@
   <div class="form-info">
   <div class='signup-container'>
     <div class='right-container'>
-      <!-- <form action="xu_ly_form" method="POST"> -->
         <h1>FRACTURE RISK CALCULATOR</h1>
         <h1>Fill out the following to estimate your fracture risk</h1>
+        <div class="warning hidden">
+          <p style="color: red; font-size: 18px;">
+            Please make the amendments listed below before submitting form again.
+          </p>
+          <ul>
+            <li style="color: red; margin-left: 40px; font-size: 18px;">Please enter a valid T-Score between 4 and -5
+            </li>
+          </ul>
+        </div>
         <div class='set'>
           <div class='pets-name3'>
-            <label for='pets-name3'>Full Name
+            <label for='pets-name'>Full Name
                 (optional)</label>
-            <input id='name' name="name" placeholder="Full Name" type='text'>
+            <input id='name' placeholder="Full Name" type='text'>
           </div>
           <div class="pets-name3">
               <label for="">Fractures since the age of 50
               </label>
               <!-- <div style="font-size: 0.8em;">(excluding major trauma, e.g. car accidents)</div> -->
-              <select name="Fra-50" id="Fra-50" class="SL">
+              <select name="" id="Fra-50" class="SL">
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -143,7 +151,7 @@
           </div>
           <div class='pets-birthday'>
             <label for='pets-birthday'>Falls over last 12 months</label>
-            <select name="Fall-12" id="Fall-12" class="SL">
+            <select name="" id="Fall-12" class="SL">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -155,9 +163,9 @@
           <div class='pets-gender'>
             <label for='pet-gender-female'>Sex</label>
             <div class='radio-container'>
-              <input checked='' id='female' name='gender' type='radio' value='female'>
+              <input checked='' id='female' name='pet-gender' type='radio' value='female'>
               <label for='female'>Female</label>
-              <input id='male' name='gender' type='radio' value='male'>
+              <input id='male' name='pet-gender' type='radio' value='male'>
               <label for='male'>Male</label>
             </div>
           </div>
@@ -166,9 +174,9 @@
                 Bone Mineral Density (BMD)
                 measurement?</label>
             <div class='radio-container'>
-              <input checked='' id='Yes' name='YS-BMD' type='radio' value='Yes' onclick="Visi2()">
+              <input checked='' id='Yes' name='spayed-neutered' type='radio' value='Yes' onclick="Visi2()">
               <label for='Yes'>Yes</label>
-              <input id='No' name='YS-BMD' type='radio' value='No' onclick="Visi()">
+              <input id='No' name='spayed-neutered' type='radio' value='No' onclick="Visi()">
               <label for='No'>No</label>
             </div>
           </div>
@@ -182,15 +190,15 @@
             <label for='T-score'>T-scores
               <div class="avatar" data-tooltip="T-score is the BMD value compared with young normal people of the same sex and general ethnicity. These are usually listed prominently on the BMD report. You must enter the + or - in front of the value as shown."></div>
             </label>
-            <input id='T-score' name="T-score" type='text'>
+            <input id='T-score' type='text' placeholder="-5 to 4">
           </div>
           <div class="pets-name">
             <label for="BMD">Actual BMD</label>
           <input type="text" name="BMD" id="BMD" placeholder="g/cm²">
           </div>
         </div>
-        <div class="or">OR</div>
-        <div class='pets-spayed-neutered2'>
+        <div>OR</div>
+        <div class='pets-spayed-neutered'>
           <label for='pet-spayed'>Densitometer</label>
           <div class='radio-container2'>
             <input checked='' id='Lunar' name='DXA' type='radio' value='by DXA GE Lunar'>
@@ -214,8 +222,7 @@
           <button id='back' onclick="window.location.href='form2.html'">Bảng 2</button>
           <button id='next' onclick="Chart()">Next</button>
         </div>
-      </footer> 
-    <!-- </form>  -->
+      </footer>  
       </div> 
      </div>   
     </div>
@@ -238,25 +245,19 @@
         <div id="tm-gallery-page-chart3" class="tm-gallery-page hidden" style="margin-left: 100px;">
           <div id="chartContainer3">
           </div>
-          <img src="/S/Chart/img/blue.png" alt=""> Số người sống sót
+          <img src="img/blue.png" alt=""> Số người sống sót
           </div>
     <script>
       function Visi(){
         $('.pets-name').addClass('hidden');
         $('.pets-name2').removeClass('hidden');
-        $('.pets-spayed-neutered2').addClass('hidden');
-        $('.or').addClass('hidden');
       }
       function Visi2(){
         $('.pets-name2').addClass('hidden');
         $('.pets-name').removeClass('hidden');
-        $('.pets-spayed-neutered2').removeClass('hidden');
-        $('.or').removeClass('hidden');
       }
         function Chart(){
-            // document.getElementById("ivs").style.opacity = 1;
-            // document.getElementById("ivs2").style.opacity = 1;
-           var age = document.getElementById("age").value;
+          var age = document.getElementById("age").value;
            var y1 = document.getElementById("T-score").value;
            var Pfx = document.getElementById("Fra-50").value;
            var Fall = document.getElementById("Fall-12").value;
@@ -272,7 +273,7 @@
 
             var So5_Any_men = 0.999921076;
             var So10_Any_men = 0.999848975;
-            var y = (b1_Any_Women_BMD * age) + (b2_Any_Women_BMD * y1) + (b3_Any_Women_BMD * Pfx) + (b4_Any_Women_BMD * Fall);
+            
         ////////////////////table 2//////////////////////
             var b1_Any_Women_BMD = 0.0321;
             var b2_Any_Women_BMD = -0.4022;
@@ -303,23 +304,39 @@
             var b1_Hip_Women_weight = 0.0866;
             var b2_Hip_Women_weight = -0.0444;
             var b3_Hip_Women_weight = 1.1916;
-            var b4_Hip_Women_BMD = 0.2946;
+            var b4_Hip_Women_weight = 0.2946;
 
             var b1_Hip_men_weight = 0.138;
             var b2_Hip_men_weight = -0.008;
             var b3_Hip_men_weight = 0.854;
-            var b4_Hip_men_BMD = 0.233;
+            var b4_Hip_men_weight = 0.233;
 
-            var b1_Any_men_BMD = 0.09071;
-            var b2_Any_men_BMD = -0.00765;
-            var b3_Any_men_BMD = 1.00818;
-            var b4_Any_men_BMD = 0.12797;
+            var b1_Any_men_weight = 0.09071;
+            var b2_Any_men_weight = -0.00765;
+            var b3_Any_men_weight = 1.00818;
+            var b4_Any_men_weight = 0.12797;
 
+            // var y = (b1_Hip_Women_BMD * age) + (b2_Hip_Women_BMD * y1) + (b3_Hip_Women_BMD * Pfx) + (b4_Hip_Women_BMD * Fall);
+            // var risk5 = 1 - (So5_Hip_Women)**(y)*100;
+            // var risk10 = 1 - (So10_Hip_Women)**(y)*100;
+            // document.getElementById("ivs").style.opacity = 1;
+            // document.getElementById("ivs2").style.opacity = 1;
+            // var y1 = document.getElementById("T-score").value;
+            if(y1 > 4 || y1 <-5)
+            {
+              $('.warning').removeClass('hidden');
+            }
+            else{
+              
             $('.tm-paging-links').removeClass('hidden');
             $('.tm-gallery-page').removeClass('hidden2');
             document.getElementById("tog").style.visibility = 'visible';
         // var y1 = document.getElementById("T-score").value;
-        var y2 = document.getElementById("BMD").value;
+        // var y2 = document.getElementById("BMD").value;
+        var y =  (b1_Hip_Women_BMD * age) + (b2_Hip_Women_BMD * y1) + (b3_Hip_Women_BMD * Pfx) + (b4_Hip_Women_BMD * Fall);
+        var n = y.toFixed(5);
+        var risk5 = (1 - (So5_Hip_Women)**(n))*10000;
+        var risk10 = (1 - (So10_Hip_Women)**(n))*10000;
         var chart = new CanvasJS.Chart("chartContainer1", {
             animationEnabled: true,
             theme: "light2", // "light1", "light2", "dark1", "dark2"
@@ -337,9 +354,9 @@
                 type: "column",
                 yValueFormatString: "#,##0.0#\"%\"",
                 dataPoints: [
-                    {  label:"10",y: +y1, indexLabel: +y1+"% survive at least 5 years" },	
+                    {  label:"5",y: +risk5, indexLabel: +risk5+"% survive at least 5 years" },	
                     
-                    { label: "15", y: +y2, indexLabel: +y2+"% survive at least 10 years" }
+                    { label: "10", y: +risk10, indexLabel: +risk10+"% survive at least 10 years" }
                     
                 ]
             }]
@@ -364,21 +381,21 @@
          //document.write("<div class='square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
          var para = document.createElement("IMG");
-        para.setAttribute("src", "/S/Chart/img/blue.png");
+        para.setAttribute("src", "img/blue.png");
         para.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para);
       } else {
          //document.write("<div class='empty-square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
          var para2 = document.createElement("IMG");
-        para2.setAttribute("src", "/S/Chart/img/purple.png");
+        para2.setAttribute("src", "img/purple.png");
         para2.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para2);
       
       }
    }   
  }
-
+      }
         }  
         // function Chart2(){
           // document.getElementById("chartContainer2").style.width = '33%';
