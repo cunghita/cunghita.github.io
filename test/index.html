@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="templatemo-style.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
-    <script type="text/javascript" src="/S/Chart/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/S/Chart/canvasjs-3.2.11/canvasjs.min.js"></script>
+    <script type="text/javascript" src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="canvasjs-3.2.11/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -219,9 +219,9 @@
             <div id="chartContainer3">
           </div>
           <div class="col-md-6 offset-7" style="padding-top:35px; position: relative; margin-top: -200px;">          
-            <img src="/S/Chart/img/blue.png" alt=""> Số người sống sót
+            <img src="img/blue.png" alt=""> Số người sống sót
             <br>
-            <img src="/S/Chart/img/purple.png" alt=""> Số người tử vong
+            <img src="img/purple.png" alt=""> Số người tử vong
           </div>
           <!-- </div> -->
           <!-- </div> -->
@@ -251,81 +251,43 @@
         $('.or').removeClass('hidden');
       }
         function Chart(){
-            // document.getElementById("ivs").style.opacity = 1;
-            // document.getElementById("ivs2").style.opacity = 1;
-          //  var age = document.getElementById("age").value;
-          //  var y1 = document.getElementById("T-score").value;
-          //  var Pfx = document.getElementById("Fra-50").value;
-          //  var Fall = document.getElementById("Fall-12").value;
-           ////////////////////table 1/////////////////////////
-            var So5_Any_Women = 0.995750118;
-            var So10_Any_Women = 0.990905138;
-
-            var So5_Hip_Women = 0.999896685;
-            var So10_Hip_Women = 0.999793070;
-
-            var So5_Hip_men = 0.999998862;
-            var So10_Hip_men = 0.999997778;
-
-            var So5_Any_men = 0.999921076;
-            var So10_Any_men = 0.999848975;
-            
-        ////////////////////table 2//////////////////////
-            var b1_Any_Women_BMD = 0.0321;
-            var b2_Any_Women_BMD = -0.4022;
-            var b3_Any_Women_BMD = 0.5691;
-            var b4_Any_Women_BMD = 0.2038;
-            
-            var b1_Hip_Women_BMD = 0.0507;
-            var b2_Hip_Women_BMD = -0.8417;
-            var b3_Hip_Women_BMD = 0.8127;
-            var b4_Hip_Women_BMD = 0.3614;
-
-            var b1_Hip_men_BMD = 0.107;
-            var b2_Hip_men_BMD = -1.007;
-            var b3_Hip_men_BMD = 0.599;
-            var b4_Hip_men_BMD = 0.212;
-
-            var b1_Any_men_BMD = 0.0883;
-            var b2_Any_men_BMD = -0.2986;
-            var b3_Any_men_BMD = 0.8454;
-            var b4_Any_men_BMD = 0.0981;
-
-        ////////////////table 3///////////////////////
-            var b1_Any_Women_weight = 0.0511;
-            var b2_Any_Women_weight = -0.0099;
-            var b3_Any_Women_weight = 0.6709;
-            var b4_Any_Women_weight = 0.1985;
-            
-            var b1_Hip_Women_weight = 0.0866;
-            var b2_Hip_Women_weight = -0.0444;
-            var b3_Hip_Women_weight = 1.1916;
-            var b4_Hip_Women_weight = 0.2946;
-
-            var b1_Hip_men_weight = 0.138;
-            var b2_Hip_men_weight = -0.008;
-            var b3_Hip_men_weight = 0.854;
-            var b4_Hip_men_weight = 0.233;
-
-            var b1_Any_men_weight = 0.09071;
-            var b2_Any_men_weight = -0.00765;
-            var b3_Any_men_weight = 1.00818;
-            var b4_Any_men_weight = 0.12797;
+          var b = []; //{"any" :123, "aom":45 };
+          b["wo-hip-bmd"] ={"b1":0.0507,"b2":-0.8417,"b3":0.8127,"b4":0.3614,"So5":0.999896685,"So10":0.999793070};
+          b["wo-any-bmd"] = {"b1":0.0321,"b2":-0.4022,"b3":0.5691,"b4":0.2038,"So5":0.995750118,"So10":0.990905138 };
+          b["wo-hip-wei"] ={"b1":0.0866,"b2":-0.0444,"b3":1.1916,"b4":0.2946,"So5":0.999896685,"So10":0.999793070};
+          b["wo-any-wei"] ={"b1":0.0511,"b2":-0.0099,"b3":0.6709,"b4":0.1985,"So5":0.995750118,"So10":0.990905138};
+          b["men-hip-bmd"] ={"b1":0.107,"b2":-1.007,"b3":0.599,"b4":0.212,"So5":0.999998862,"So10":0.999997778};
+          b["men-any-bmd"]={"b1":0.0883,"b2":-0.2986,"b3":0.8454,"b4":0.0981,"So5":0.999921076,"So10":0.999848975};
+          b["men-hip-wei"] ={"b1":0.138,"b2":-0.008,"b3":0.854,"b4":0.233,"So5":0.999998862,"So10":0.999997778};
+          b["men-any-wei"]={"b1":0.09071,"b2":-0.00765,"b3":1.00818,"b4":0.12797,"So5":0.999921076,"So10":0.999848975};
+          var age = document.getElementById("age").value;
+          var tscore = document.getElementById("T-score").value;
+          var wei = document.getElementById("weight").value;
+          var pfx = document.getElementById("Fra-50").value;
+          var fall = document.getElementById("Fall-12").value;
+          var sex = 'men';
+          var ysbmd ='bmd';
+          var hip = b[sex+'-hip-'+ysbmd];
+          var any = b[sex+'-any-'+ysbmd];
+           if(ysbmd=='bmd')
+           {
+            var n = tscore;
+           }
+           else{
+            var n = wei;
+           }
+           var y_hip=  hip['b1']*age + hip['b2']*n + hip['b3']*pfx + hip['b4']*fall;
+           var y_any =  any['b1']*age + any['b2']*n + any['b3']*pfx + any['b4']*fall;
+           var risk5_hip =Math.round ((1 - Math.pow(hip['So5'],Math.exp(y_hip)))*100, 1);
+           var risk10_hip =Math.round ((1 - Math.pow(hip['So10'],Math.exp(y_hip)))*100, 1);
+           var risk5_any =Math.round ((1 - Math.pow(any['So5'],Math.exp(y_any)))*100, 1);
+           var risk10_any =Math.round ((1 - Math.pow(any['So10'],Math.exp(y_any)))*100, 1);
+              
             $('.offset-8').removeClass('hidden');
             $('.tm-paging-links').removeClass('hidden');
             $('.tm-gallery-page').removeClass('hidden2');
             document.getElementById("tog").style.visibility = 'visible';
-        // var y1 = document.getElementById("T-score").value;
-        // var y2 = document.getElementById("BMD").value;
-        // var y = (b1_Hip_Women_BMD * age) + (b2_Hip_Women_BMD * y1) + (b3_Hip_Women_BMD * Pfx) + (b4_Hip_Women_BMD * Fall);
-        // var n = y.toFixed(5);
-        // var test = 1- (So5_Hip_Women**(Math.exp(n)));
-        // var test2 = test.toFixed(3) * 100;
-        // var risk5 = test2.toFixed(1);
-        // var test3 = 1- (So10_Hip_Women**(Math.exp(n)));
-        // var test4 = test3.toFixed(3) * 100;
-        // var risk10 = test4.toFixed(1);
-        // var tim = 100 - (test2.toFixed(0));
+        
         var chart = new CanvasJS.Chart("chartContainer1", { 
         width: 600,
         height: 300,           
@@ -344,9 +306,9 @@
         yValueFormatString: "#,##0.0#\"%\"",
        name: "First Quarter",
        dataPoints: [
-       { label: "5 years", y: 58 , indexLabel: 58 +"% risk"},
+       { label: "5 years", y: +risk5_hip , indexLabel: +risk5_hip +"% risk"},
  
-       { label: "grape", y: 64 , indexLabel: 64 +"% risk"}
+       { label: "10 years", y: +risk10_hip , indexLabel: +risk10_hip +"% risk"}
        ]
      },
      { //dataSeries - second quarter
@@ -357,9 +319,9 @@
        yValueFormatString: "#,##0.0#\"%\"",
       name: "Second Quarter",                
       dataPoints: [
-      { label: "5 years", y: 63 , indexLabel: 63 +"% risk"},
+      { label: "5 years", y: +risk5_any , indexLabel: +risk5_any +"% risk"},
 
-      { label: "10 years", y: 60 , indexLabel: 60 +"% risk"}
+      { label: "10 years", y: +risk10_any , indexLabel: +risk10_any +"% risk"}
       ]
     }
     ]
@@ -384,14 +346,14 @@
          //document.write("<div class='square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
          var para = document.createElement("IMG");
-        para.setAttribute("src", "/S/Chart/img/blue.png");
+        para.setAttribute("src", "img/blue.png");
         para.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para);
       } else {
          //document.write("<div class='empty-square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
          var para2 = document.createElement("IMG");
-        para2.setAttribute("src", "/S/Chart/img/purple.png");
+        para2.setAttribute("src", "img/purple.png");
         para2.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para2);
       
