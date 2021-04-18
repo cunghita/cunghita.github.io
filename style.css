@@ -284,20 +284,24 @@ body{
     margin-top: 20px;
   }
   #chartContainer1{
-    margin-left: 100px;
+    /* margin-left: 100px; */
+    /*  */
     /* height: 300px; */
     /* max-width: 40%; */
+    /* display: inline-block; */
   }
   #chartContainer2{
-    margin-left: 100px;
+    /* margin-left: 100px; */
+    /*  */
     /* height: 300px;
     width: 33%; */
   }
   #chartContainer3{
-    position: relative;
+    /* position: relative;
     display: inline-block;
-    clear: both;
-    height: 100px;
+    clear: both; */
+    /*  */
+    height: 0px;
     top: 5px;
   }
   .col-xs-12{
@@ -309,12 +313,71 @@ body{
     padding-left: 15px;
   }
   .well{
+    /* margin-top: -200px; */
+    /* margin-top: 400px;  queries*/
+    min-height: 20px;
     background-color: rgb(211,231,253);
     padding: 19px;
     margin-bottom: 20px;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
-    width: 400px;
+    /* width: 400px; */
+  }
+  .space{
+    margin-top: 400px;
+  }
+  .long-chart{
+    border: 1px solid rgb(204,204,204);
+     border-radius:3px;
+     font-size: 16px;
+  }
+  .long-header{
+    background-color: rgb(211,231,253);
+    border-radius: 3px;
+    
+  }
+  #back-header{
+    margin-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .first-note, .second-note{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  #p-img{
+    width: 30px;
+  }
+  .chart4{
+    padding: 0px 15px;
+    font-size: 16px;
+  }
+  .b1{
+    color: rgb(34, 34 ,170);
+  }
+  .b2{
+    color: rgb(102, 0, 68);
+  }
+  .b3{
+    color: rgb(102, 0, 68);
+  }
+  .b4{
+    color: rgb(204,92,164);
+  }
+  .percent{
+    font-size: 100%;
+    font-weight: bold;
+    display: inline-block;
+  }
+  #num-percent{
+    width: 100%;
+    text-align: right;
+  }
+  .per-chart{
+    margin-top: 3px;
+  }
+  .first-chart span , .second-chart span, .third-chart span, .fourth-chart span{
+    font-size: 12px;
   }
 /* -----------------Content------------------- */
 .content-layout{

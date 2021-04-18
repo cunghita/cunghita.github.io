@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="templatemo-style.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
-    <script type="text/javascript" src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="canvasjs-3.2.11/canvasjs.min.js"></script>
+    <script type="text/javascript" src="/S/Chart/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/S/Chart/canvasjs-3.2.11/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="queries.css">
+    <link rel="stylesheet" href="/S/Chart/queries.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,71 +22,38 @@
             <img class="Logo" src="img/prostate-angle-man_1.png" alt="logo">
             <img class="Logo2" src="img/NHS.jpg" alt="logo" style="width: 150px;">
     </div>
-  <div id="menu">
-    <ul>
-      <li><a href="home.html">Trang chủ</a></li>
-      <li><a href="#">Giới thiệu<i class="fas fa-caret-down"></i></a>
-        <ul class="sub-menu">
-          <li><a href="introduce.html">Phần mềm chẩn đoán</a></li>
-          <li><a href="introduce.html">Loãng xương là gì?</a></li>
-          <li><a href="introduce.html">Dành cho ai?</a>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#">Diễn đàn</a></li>
-      <li><a href="#">Hỏi đáp</a></li>
-      <li><a href="#">Liên hệ</a></li>
-    </ul>
-  </div>
-  <div style="background-color: rgb(211, 231, 253); height: 30px; width: 100%;"></div>
-  <!-- <div class="login-box">
-    <h2>Nhập thông tin</h2>
-    <form action="#">
-      <div class="user-box">
-        <input type="text" name="Y1" id="Y1" autocomplete="off">
-        <label>Thông số 1</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="Y2" id="Y2" autocomplete="off">
-        <label>Thông số 2</label>
-        <input type="text" name="Y3" id="Y3" autocomplete="off">
-        <label>Phần trăm</label>
-      </div>            
-        
-        <a href="#" onclick="Chart()">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Submit
-        </a>
-    </form>
-  </div> -->
-  <div class="form-info">
-  <div class='signup-container'>
-    <div class='right-container'>
-        <h1>FRACTURE RISK CALCULATOR</h1>
-        <h1>Fill out the following to estimate your fracture risk</h1>
-        <div class="warning hidden">
-          <p style="color: red; font-size: 18px;">
-            Please make the amendments listed below before submitting form again.
-          </p>
-          <ul>
-            <li style="color: red; margin-left: 40px; font-size: 18px;">Please enter a valid T-Score between 4 and -5
+    <div id="menu">
+      <ul>
+        <li><a href="home.html">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu<i class="fas fa-caret-down"></i></a>
+          <ul class="sub-menu">
+            <li><a href="introduce.html">Phần mềm chẩn đoán</a></li>
+            <li><a href="introduce.html">Loãng xương là gì?</a></li>
+            <li><a href="introduce.html">Dành cho ai?</a>
             </li>
           </ul>
-        </div>
+        </li>
+        <li><a href="#index.html">Chẩn đoán</a></li>
+        <li><a href="#">Hỏi đáp</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+    </div>
+  <div style="background-color: rgb(211, 231, 253); height: 30px; width: 100%;"></div>
+  <div class="form-info">
+  <div class='signup-container'>
+    <div class='right-container'>   
+        <h1>FRACTURE RISK CALCULATOR</h1>
+        <h1>Fill out the following to estimate your fracture risk</h1>
         <div class='set'>
           <div class='pets-name3'>
-            <label for='pets-name'>Full Name
+            <label for='pets-name3'>Full Name
                 (optional)</label>
-            <input id='name' placeholder="Full Name" type='text'>
+            <input id='name' name="name" placeholder="Full Name" type='text'>
           </div>
           <div class="pets-name3">
               <label for="">Fractures since the age of 50
               </label>
-              <!-- <div style="font-size: 0.8em;">(excluding major trauma, e.g. car accidents)</div> -->
-              <select name="" id="Fra-50" class="SL">
+              <select name="Fra-50" id="Fra-50" class="SL">
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -97,7 +64,6 @@
         <div class='set'>
           <div class='pets-breed'>
             <label for='pets-breed'>Age</label>
-            <!-- <input id='pets-breed' placeholder="Pet's breed" type='text'> -->
             <select name="age" id="age" class="SL">
                 <option value="Select Age">Select Age</option>
                 <option value="50">50</option>
@@ -151,7 +117,7 @@
           </div>
           <div class='pets-birthday'>
             <label for='pets-birthday'>Falls over last 12 months</label>
-            <select name="" id="Fall-12" class="SL">
+            <select name="Fall-12" id="Fall-12" class="SL">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -163,10 +129,10 @@
           <div class='pets-gender'>
             <label for='pet-gender-female'>Sex</label>
             <div class='radio-container'>
-              <input checked='' id='female' name='pet-gender' type='radio' value='female'>
-              <label for='female'>Female</label>
-              <input id='male' name='pet-gender' type='radio' value='male'>
-              <label for='male'>Male</label>
+              <input checked='' id='wo' name='gender' type='radio' value='wo'>
+              <label for='wo'>Female</label>
+              <input id='men' name='gender' type='radio' value='men'>
+              <label for='men'>Male</label>
             </div>
           </div>
           <div class='pets-spayed-neutered'>
@@ -174,10 +140,10 @@
                 Bone Mineral Density (BMD)
                 measurement?</label>
             <div class='radio-container'>
-              <input checked='' id='Yes' name='spayed-neutered' type='radio' value='Yes' onclick="Visi2()">
-              <label for='Yes'>Yes</label>
-              <input id='No' name='spayed-neutered' type='radio' value='No' onclick="Visi()">
-              <label for='No'>No</label>
+              <input checked='' id='bmd' name='YN-BMD' type='radio' value='bmd' onclick="Visi2()">
+              <label for='bmd'>Yes</label>
+              <input id='wei' name='YN-BMD' type='radio' value='wei' onclick="Visi()">
+              <label for='wei'>No</label>
             </div>
           </div>
         </div>
@@ -190,15 +156,15 @@
             <label for='T-score'>T-scores
               <div class="avatar" data-tooltip="T-score is the BMD value compared with young normal people of the same sex and general ethnicity. These are usually listed prominently on the BMD report. You must enter the + or - in front of the value as shown."></div>
             </label>
-            <input id='T-score' type='text' placeholder="-5 to 4">
+            <input id='T-score' name="T-score" type='text'>
           </div>
           <div class="pets-name">
             <label for="BMD">Actual BMD</label>
           <input type="text" name="BMD" id="BMD" placeholder="g/cm²">
           </div>
         </div>
-        <div>OR</div>
-        <div class='pets-spayed-neutered'>
+        <div class="or">OR</div>
+        <div class='pets-spayed-neutered2'>
           <label for='pet-spayed'>Densitometer</label>
           <div class='radio-container2'>
             <input checked='' id='Lunar' name='DXA' type='radio' value='by DXA GE Lunar'>
@@ -217,15 +183,24 @@
                </div>
           </div>
         </div>
-      <footer>
+      <div class="footer">
         <div class='set'>
           <button id='back' onclick="window.location.href='form2.html'">Bảng 2</button>
           <button id='next' onclick="Chart()">Next</button>
         </div>
-      </footer>  
+      </div> 
       </div> 
      </div>   
     </div>
+    <!-- <button id='next' onclick="Chart()">Next</button> -->
+    <div class="row">
+      <div class="col-sm-12">
+    <div class="row">
+    <div class="col-md-10 col-md offset-1">
+      <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 col-md offset-1">
     <div class="tm-paging-links hidden" id = "tog">
       <nav>
         <ul>
@@ -236,135 +211,352 @@
       </nav>
     </div>
       <!-- gallery page 1 -->
-      <div id="tm-gallery-page-chart1" class="tm-gallery-page hidden2">  
+      <!-- <div class="col-md-6 col-md offset-1"> -->
+        <!-- <div class=""> -->
+      <!-- <div id="tm-gallery-page-chart1" class="tm-gallery-page hidden2"> -->
+        <div id="tm-gallery-page-chart1" class="tm-gallery-page hidden2">
+        <p>This graph shows the percentage of men surviving at 10 and 15 years. 
+          These results are based on the inputs and treatments you selected</p>
         <div id="chartContainer1"></div>
         </div>
         <div id="tm-gallery-page-chart2" class="tm-gallery-page hidden" >
         <div id="chartContainer2"></div>
         </div>
-        <div id="tm-gallery-page-chart3" class="tm-gallery-page hidden" style="margin-left: 100px;">
-          <div id="chartContainer3">
+        <!-- <div id="tm-gallery-page-chart3" class="tm-gallery-page row1 hidden" style="margin-left: 100px; position: relative;"> -->
+          <div id="tm-gallery-page-chart3" class="tm-gallery-page row1 hidden">
+          <!-- <div class="col-xs-12"> -->
+            <!-- <div> -->
+            <!-- <div class="row1" style="clear:both;"> -->
+              <!-- <div> -->
+          <!-- <div id="chartContainer3" class="col-sm-7"> -->
+            <div id="chartContainer3">
           </div>
-          <img src="img/blue.png" alt=""> Số người sống sót
+          <div class="col-md-6 offset-7" style="padding-top:35px; position: absolute; margin-top: -50px;">          
+            <img src="/S/Chart/img/new_b.png" alt="" style="width: 30px;"> Số người sống sót
+            <br>
+            <img src="/S/Chart/img/new_p.png" alt="" style="width: 30px;"> Số người tử vong
           </div>
+          <!-- </div> -->
+          <!-- </div> -->
+         </div>
+        <!-- </div> -->
+      </div>  
+    <!-- </div> -->
+  <!-- </div>
+  </div> -->
+        <div class="col-md-4 hidden" id = "noti">
+          <div class="well">
+            <section>
+              <h3>Important</h3>
+              <p>These results are estimates based on data from men with similar characteristics. 
+                There are other important factors which affect outcomes. 
+                Your specialist will help you put these results in context.</p>
+            </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md offset-1 hidden" >
+              <div class="space">
+                <div class="long-chart">
+                  <div class="col-12" id="back-header">
+                    <div class="row long-header">
+                      <h5>Potentially permanent harms of</h5>
+                      <div class="col-sm-6">
+                        <div class="first-note">
+                          <svg width="14" height="14">
+                            <circle cx="7" cy="7" r="7" fill="#2222AA" opacity="1" stroke="none" stroke-width="1"></circle>
+                          </svg>
+                          Conservative management
+                        </div>
+                        <div class="second-note">
+                          <svg width="14" height="14">
+                            <circle cx="7" cy="7" r="7" fill="#660044" opacity="1" stroke="none" stroke-width="1"></circle>
+                          </svg>
+                          Radical prostatectomy
+                        </div>
+                        <div class="third-note">
+                          <svg width="14" height="14">
+                            <circle cx="7" cy="7" r="7" fill="#CC5CA4" opacity="1" stroke="none" stroke-width="1"></circle>
+                          </svg>
+                          Radical Radiotherapy
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <p style="font-size: 14px;">The following estimates assume that the function is normal before treatment and have been taken from large published studies. 
+                          The estimates are not individualised to you or your local treatment centre or are they derived from the predict calculator. 
+                          Your local team may have data specific to your centre which you can ask about.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chart4">
+                    <h5>Erectile dysfunction</h5>
+                    <h6>Defined as: 'Erections insufficient for intercourse'</h6>
+                    <div class="first-chart">
+                    <span>With
+                      <span id="about-b1"><b class="b1">conservative management</b>, about </span>
+                      <div id="childDiv" class="hidden"></div>
+                    </span>
+                    <div class="row">
+                      <div class="col-1 percent">
+                        <span id="num-percent"></span>
+                      </div>
+                      <div class="col-11 per-chart" id="chartContainer4">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="second-chart">
+                    <span>
+                      With
+                      <span id="about-b2"><b class="b2">nerve-sparing radical prostatectomy</b>, about</span>
+                      <div id="childDiv2" class="hidden"></div>
+                    </span>
+                    <div class="row">
+                      <div class="col-1 percent">
+                        <span id="num-percent2"></span>
+                      </div>
+                      <div class="col-11 per-chart" id="chartContainer4_2"></div>
+                    </div>
+                  </div>
+                  <div class="third-chart">
+                    <span>
+                      With
+                      <span id="about-b3"><b class="b3">non-nerve-sparing radical prostatectomy</b>, about</span>
+                      <div id="childDiv3" class="hidden"></div>
+                    </span>
+                    <div class="row">
+                      <div class="col-1 percent">
+                        <span id="num-percent3"></span>
+                      </div>
+                      <div class="col-11 per-chart" id="chartContainer4_3"></div>
+                    </div>
+                  </div>
+                  <div class="fourth-chart">
+                    <span>
+                      With
+                      <span id="about-b4"><b class="b4">radiotherapy</b>, about</span>
+                      <div id="childDiv4" class="hidden"></div>
+                    </span>
+                    <div class="row">
+                      <div class="col-1 percent">
+                        <span id="num-percent4"></span>
+                      </div>
+                      <div class="col-11 per-chart" id="chartContainer4_4"></div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+ </div>
+</div>
+    <!-- </div>
+  </div>
+ </div>
+   </div>
+  </div>
+</div>
+</div> -->
+        <!-- <div class="col-md-10 col-md offset-1 hidden" style="position: relative; top: 250px;">
+          <div style="margin-top: 15px;">
+            <div class="long-chart">
+              <div class="col-12" id="back-header">
+                <div class="row long-header">
+                  <h5>Potentially permanent harms of</h5>
+                  <div class="col-sm-6">
+                    <div class="first-note">
+                      <svg width="14" height="14">
+                        <circle cx="7" cy="7" r="7" fill="#2222AA" opacity="1" stroke="none" stroke-width="1"></circle>
+                      </svg>
+                      Conservative management
+                    </div>
+                    <div class="second-note">
+                      <svg width="14" height="14">
+                        <circle cx="7" cy="7" r="7" fill="#660044" opacity="1" stroke="none" stroke-width="1"></circle>
+                      </svg>
+                      Radical prostatectomy
+                    </div>
+                    <div class="third-note">
+                      <svg width="14" height="14">
+                        <circle cx="7" cy="7" r="7" fill="#CC5CA4" opacity="1" stroke="none" stroke-width="1"></circle>
+                      </svg>
+                      Radical Radiotherapy
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <p style="font-size: 14px;">The following estimates assume that the function is normal before treatment and have been taken from large published studies. 
+                      The estimates are not individualised to you or your local treatment centre or are they derived from the predict calculator. 
+                      Your local team may have data specific to your centre which you can ask about.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chart4">
+                <h5>Erectile dysfunction</h5>
+                <h6>Defined as: 'Erections insufficient for intercourse'</h6>
+                <div class="first-chart">
+                <span>With
+                  <span id="about-b1"><b class="b1">conservative management</b>, about </span>
+                  <div id="childDiv" class="hidden"></div>
+                </span>
+                <div class="row">
+                  <div class="col-1 percent">
+                    <span id="num-percent"></span>
+                  </div>
+                  <div class="col-11 per-chart" id="chartContainer4">
+                  </div>
+                </div>
+              </div>
+              <div class="second-chart">
+                <span>
+                  With
+                  <span id="about-b2"><b class="b2">nerve-sparing radical prostatectomy</b>, about</span>
+                  <div id="childDiv2" class="hidden"></div>
+                </span>
+                <div class="row">
+                  <div class="col-1 percent">
+                    <span id="num-percent2"></span>
+                  </div>
+                  <div class="col-11 per-chart" id="chartContainer4_2"></div>
+                </div>
+              </div>
+              <div class="third-chart">
+                <span>
+                  With
+                  <span id="about-b3"><b class="b3">non-nerve-sparing radical prostatectomy</b>, about</span>
+                  <div id="childDiv3" class="hidden"></div>
+                </span>
+                <div class="row">
+                  <div class="col-1 percent">
+                    <span id="num-percent3"></span>
+                  </div>
+                  <div class="col-11 per-chart" id="chartContainer4_3"></div>
+                </div>
+              </div>
+              <div class="fourth-chart">
+                <span>
+                  With
+                  <span id="about-b4"><b class="b4">radiotherapy</b>, about</span>
+                  <div id="childDiv4" class="hidden"></div>
+                </span>
+                <div class="row">
+                  <div class="col-1 percent">
+                    <span id="num-percent4"></span>
+                  </div>
+                  <div class="col-11 per-chart" id="chartContainer4_4"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
     <script>
       function Visi(){
         $('.pets-name').addClass('hidden');
         $('.pets-name2').removeClass('hidden');
+        $('.pets-spayed-neutered2').addClass('hidden');
+        $('.or').addClass('hidden');
       }
       function Visi2(){
         $('.pets-name2').addClass('hidden');
         $('.pets-name').removeClass('hidden');
+        $('.pets-spayed-neutered2').removeClass('hidden');
+        $('.or').removeClass('hidden');
       }
         function Chart(){
-          var age = document.getElementById("age").value;
-           var y1 = document.getElementById("T-score").value;
-           var Pfx = document.getElementById("Fra-50").value;
-           var Fall = document.getElementById("Fall-12").value;
-           ////////////////////table 1/////////////////////////
-            var So5_Any_Women = 0.995750118;
-            var So10_Any_Women = 0.990905138;
 
-            var So5_Hip_Women = 0.999896685;
-            var So10_Hip_Women = 0.999793070;
+          ////////////////////////////////////Calculate////////////////////////////
 
-            var So5_Hip_men = 0.999998862;
-            var So10_Hip_men = 0.999997778;
-
-            var So5_Any_men = 0.999921076;
-            var So10_Any_men = 0.999848975;
+          //var b = []; //{"any" :123, "aom":45 };
+          // b["wo-hip-bmd"] ={"b1":0.0507,"b2":-0.8417,"b3":0.8127,"b4":0.3614,"So5":0.999896685,"So10":0.999793070};
+          // b["wo-any-bmd"] = {"b1":0.0321,"b2":-0.4022,"b3":0.5691,"b4":0.2038,"So5":0.995750118,"So10":0.990905138};
+          // b["wo-hip-wei"] ={"b1":0.0866,"b2":-0.0444,"b3":1.1916,"b4":0.2946,"So5":0.999896685,"So10":0.999793070};
+          // b["wo-any-wei"] ={"b1":0.0511,"b2":-0.0099,"b3":0.6709,"b4":0.1985,"So5":0.995750118,"So10":0.990905138};
+          // b["men-hip-bmd"] ={"b1":0.107,"b2":-1.007,"b3":0.599,"b4":0.212,"So5":0.999998862,"So10":0.999997778};
+          // b["men-any-bmd"]={"b1":0.0883,"b2":-0.2986,"b3":0.8454,"b4":0.0981,"So5":0.999921076,"So10":0.999848975};
+          // b["men-hip-wei"] ={"b1":0.138,"b2":-0.008,"b3":0.854,"b4":0.233,"So5":0.999998862,"So10":0.999997778};
+          // b["men-any-wei"]={"b1":0.09071,"b2":-0.00765,"b3":1.00818,"b4":0.12797,"So5":0.999921076,"So10":0.999848975};
+          // var age = document.getElementById("age").value;
+          // var tscore = document.getElementById("T-score").value;
+          // var wei = document.getElementById("weight").value;
+          // var pfx = document.getElementById("Fra-50").value;
+          // var fall = document.getElementById("Fall-12").value;
+          // var gender = document.getElementById("gender").value;
+          // var yn = document.getElementById("YN-BMD").value;
+          // var hip = b[gender+'-hip-'+yn];
+          // var any = b[gender+'-any-'+yn];
+          //  if(wei == null)
+          //  {
+          //   var n = tscore;
+          //  }
+          //  else{
+          //   var n = wei;
+          //  }
+          //  var y_hip=  hip['b1']*age + hip['b2']*n + hip['b3']*pfx + hip['b4']*fall;
+          //  var y_any =  any['b1']*age + any['b2']*n + any['b3']*pfx + any['b4']*fall;
+          //  var risk5_hip =Math.round ((1 - Math.pow(hip['So5'],Math.exp(y_hip)))*100, 1);
+          //  var risk10_hip =Math.round ((1 - Math.pow(hip['So10'],Math.exp(y_hip)))*100, 1);
+          //  var risk5_any =Math.round ((1 - Math.pow(any['So5'],Math.exp(y_any)))*100, 1);
+          //  var risk10_any =Math.round ((1 - Math.pow(any['So10'],Math.exp(y_any)))*100, 1);
             
-        ////////////////////table 2//////////////////////
-            var b1_Any_Women_BMD = 0.0321;
-            var b2_Any_Women_BMD = -0.4022;
-            var b3_Any_Women_BMD = 0.5691;
-            var b4_Any_Women_BMD = 0.2038;
-            
-            var b1_Hip_Women_BMD = 0.0507;
-            var b2_Hip_Women_BMD = -0.8417;
-            var b3_Hip_Women_BMD = 0.8127;
-            var b4_Hip_Women_BMD = 0.3614;
-
-            var b1_Hip_men_BMD = 0.107;
-            var b2_Hip_men_BMD = -1.007;
-            var b3_Hip_men_BMD = 0.599;
-            var b4_Hip_men_BMD = 0.212;
-
-            var b1_Any_men_BMD = 0.0883;
-            var b2_Any_men_BMD = -0.2986;
-            var b3_Any_men_BMD = 0.8454;
-            var b4_Any_men_BMD = 0.0981;
-
-        ////////////////table 3///////////////////////
-            var b1_Any_Women_weight = 0.0511;
-            var b2_Any_Women_weight = -0.0099;
-            var b3_Any_Women_weight = 0.6709;
-            var b4_Any_Women_weight = 0.1985;
-            
-            var b1_Hip_Women_weight = 0.0866;
-            var b2_Hip_Women_weight = -0.0444;
-            var b3_Hip_Women_weight = 1.1916;
-            var b4_Hip_Women_weight = 0.2946;
-
-            var b1_Hip_men_weight = 0.138;
-            var b2_Hip_men_weight = -0.008;
-            var b3_Hip_men_weight = 0.854;
-            var b4_Hip_men_weight = 0.233;
-
-            var b1_Any_men_weight = 0.09071;
-            var b2_Any_men_weight = -0.00765;
-            var b3_Any_men_weight = 1.00818;
-            var b4_Any_men_weight = 0.12797;
-
-            // var y = (b1_Hip_Women_BMD * age) + (b2_Hip_Women_BMD * y1) + (b3_Hip_Women_BMD * Pfx) + (b4_Hip_Women_BMD * Fall);
-            // var risk5 = 1 - (So5_Hip_Women)**(y)*100;
-            // var risk10 = 1 - (So10_Hip_Women)**(y)*100;
-            // document.getElementById("ivs").style.opacity = 1;
-            // document.getElementById("ivs2").style.opacity = 1;
-            // var y1 = document.getElementById("T-score").value;
-            if(y1 > 4 || y1 <-5)
-            {
-              $('.warning').removeClass('hidden');
-            }
-            else{
-              
+           //////////////////////////////////////////////////////////////////////////
+            $('.offset-1').removeClass('hidden');
+            //$('.offset-8').removeClass('hidden');
+            $('.col-md-4').removeClass('hidden');
             $('.tm-paging-links').removeClass('hidden');
             $('.tm-gallery-page').removeClass('hidden2');
             document.getElementById("tog").style.visibility = 'visible';
-        // var y1 = document.getElementById("T-score").value;
-        // var y2 = document.getElementById("BMD").value;
-        var y =  (b1_Hip_Women_BMD * age) + (b2_Hip_Women_BMD * y1) + (b3_Hip_Women_BMD * Pfx) + (b4_Hip_Women_BMD * Fall);
-        var n = y.toFixed(5);
-        var risk5 = (1 - (So5_Hip_Women)**(n))*10000;
-        var risk10 = (1 - (So10_Hip_Women)**(n))*10000;
-        var chart = new CanvasJS.Chart("chartContainer1", {
-            animationEnabled: true,
-            theme: "light2", // "light1", "light2", "dark1", "dark2"
-            title: {
-                text: "Overall Survival"
+
+      ///////////////////Chart 1 /////////////////////////////
+
+        var chart = new CanvasJS.Chart("chartContainer1", { 
+        // width: 600,
+        // height: 400,           
+      title:{
+        text: "5 & 10 year Fracture Risk",
+      },
+      axisY: {           		
+                suffix: "%",
+                minimum: 0,
+                maximum: 100
             },
-            axisY: {
-                title: "Growth Rate (in %)",
-                suffix: "%"
-            },
-            axisX: {
-                title: "years after diagnosis",
-            },
-            data: [{
-                type: "column",
-                yValueFormatString: "#,##0.0#\"%\"",
-                dataPoints: [
-                    {  label:"5",y: +risk5, indexLabel: +risk5+"% survive at least 5 years" },	
-                    
-                    { label: "10", y: +risk10, indexLabel: +risk10+"% survive at least 10 years" }
-                    
-                ]
-            }]
-        });
+      data: [  //array of dataSeries     
+      { //dataSeries - first quarter
+   /*** Change type "column" to "bar", "area", "line" or "pie"***/          
+       legendText: "Hip Fracture",
+       showInLegend: true,
+       type: "column",
+        yValueFormatString: "#,##0.0#\"%\"",
+       name: "First Quarter",
+       dataPoints: [
+       { label: "5 years", y: 58 , indexLabel: 58 +"% risk"},
+ 
+       { label: "grape", y: 64 , indexLabel: 64 +"% risk"}
+       ]
+     },
+     { //dataSeries - second quarter
+
+      type: "column",
+      legendText: "Any Fracture",
+      showInLegend: true,
+       yValueFormatString: "#,##0.0#\"%\"",
+      name: "Second Quarter",                
+      dataPoints: [
+      { label: "5 years", y: 63 , indexLabel: 63 +"% risk"},
+
+      { label: "10 years", y: 60 , indexLabel: 60 +"% risk"}
+      ]
+    }
+    ]
+  });
         chart.render(); 
         // ////////////////////////////////////
         
-        ////////////////////////////////////////
+        /////////////////chart3///////////////////////
         var t = document.getElementById("p-img");
             if(t == null){
         var y3 = document.getElementById("name").value;
@@ -377,29 +569,30 @@
        para3.setAttribute("style","clear:both");
        document.getElementById("chartContainer3").appendChild(para3);
      }
-      if (i < y3) {
+      if (i < 96) {
          //document.write("<div class='square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
          var para = document.createElement("IMG");
-        para.setAttribute("src", "img/blue.png");
+        para.setAttribute("src", "/S/Chart/img/new_b.png");
         para.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para);
       } else {
          //document.write("<div class='empty-square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
          var para2 = document.createElement("IMG");
-        para2.setAttribute("src", "img/purple.png");
+        para2.setAttribute("src", "/S/Chart/img/new_p.png");
         para2.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para2);
       
       }
    }   
  }
-      }
+
         }  
-        // function Chart2(){
-          // document.getElementById("chartContainer2").style.width = '33%';
-          // document.getElementById("chartContainer2").style.height = '300px';
+        
+       //////////////////////////////////////////
+       ///////////////////chart 2///////////////////////
+
       var chart2 = new CanvasJS.Chart("chartContainer2", {
         width: 600,
         height: 300,
@@ -425,6 +618,126 @@
       ]
     });
     chart2.render();
+
+    ////////////////////////////////////////////////
+    //////////////////chart4///////////////////////
+    var number = 27;
+    var number2 = 100;
+    var text = document.createTextNode(number+' in '+number2+' men have this issue after 3 years.');
+        var child = document.getElementById('childDiv');
+        var pa = document.getElementById('about-b1');
+          child.parentNode.insertBefore(text, child);
+          document.getElementById('num-percent').innerHTML = number+'%';
+
+          var text2 = document.createTextNode(number+' in '+number2+' men have this issue after 3 years.');
+          var child2 = document.getElementById('childDiv2');
+        var pa2 = document.getElementById('about-b2');
+          child2.parentNode.insertBefore(text2, child2);
+          document.getElementById('num-percent2').innerHTML = 56+'%';
+
+          var text3 = document.createTextNode(number+' in '+number2+' men have this issue after 3 years.');
+          var child3 = document.getElementById('childDiv3');
+        var pa3 = document.getElementById('about-b3');
+          child3.parentNode.insertBefore(text3, child3);
+          document.getElementById('num-percent3').innerHTML = 66+'%';
+
+          var text4 = document.createTextNode(number+' in '+number2+' men have this issue after 3 years.');
+          var child4 = document.getElementById('childDiv4');
+        var pa4 = document.getElementById('about-b4');
+          child4.parentNode.insertBefore(text4, child4);
+          document.getElementById('num-percent4').innerHTML = 39+'%';
+         ///////////////////////////////////////////
+         //////////////////////////////////////////
+
+         ////////////blue////////////////
+  for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=27){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "/S/Chart/SVG/rect2.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4").appendChild(sp);
+          }
+    }
+         ////////////purple////////////
+  for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=56){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "/S/Chart/SVG/rect3.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_2").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_2").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4_2").appendChild(sp);
+          }
+    }
+    /////////////////
+    for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=66){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "/S/Chart/SVG/rect3.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_3").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_3").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4_3").appendChild(sp);
+          }
+    }
+    /////////////pink///////////////
+    for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=39){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "/S/Chart/SVG/rect4.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_4").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_4").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4_4").appendChild(sp);
+          }
+    }
+    /////////////////////////////////////////////////////////////////
     $(document).ready(function(){
 			// Handle click on paging links
 			$('.tm-paging-link').click(function(e){
