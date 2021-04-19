@@ -413,7 +413,7 @@ p, address {
   margin-bottom: 40px;
   visibility: hidden;
   /* margin-left: -700px; */
-  z-index: 0;
+  z-index: 1;
 }
 
 .tm-paging-item {

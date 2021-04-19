@@ -229,9 +229,20 @@
             <!-- <div class="row1" style="clear:both;"> -->
               <!-- <div> -->
           <!-- <div id="chartContainer3" class="col-sm-7"> -->
+            <div class="col-12" style="margin-bottom: 50px;">
+              This display shows the outcomes for 100 men. These results are based on the inputs and treatments you selected
+              <span>
+                <div role="group" class="btn-group btn-5">
+                  <button class="btn btn-default btn-sm custom active" type="button" id="five" onclick="fiveyears()">5</button>
+                  <button class="btn btn-default btn-sm custom" type="button" id="ten" onclick="tenyears()">10</button>
+                </div>
+                years after diagnosis
+              </span>
+            </div>
             <div id="chartContainer3">
           </div>
-          <div class="col-md-6 offset-7" style="padding-top:35px; position: absolute; margin-top: -50px;">          
+          <div id="chartContainer3-1" class="hidden"></div>         
+          <div class="col-md-6 offset-7 info-icon" style="padding-top:35px; position: absolute; margin-top: -50px;">          
             <img src="/S/Chart/img/new_b.png" alt="" style="width: 30px;"> Số người sống sót
             <br>
             <img src="/S/Chart/img/new_p.png" alt="" style="width: 30px;"> Số người tử vong
@@ -467,6 +478,27 @@
         $('.pets-spayed-neutered2').removeClass('hidden');
         $('.or').removeClass('hidden');
       }
+      function tenyears()
+      {
+        var element = document.getElementById("five");
+        element.classList.remove("active");
+        var element2 = document.getElementById("ten");
+        element2.classList.add("active");
+        var chart3_1 = document.getElementById("chartContainer3");
+        chart3_1.classList.add("hidden");
+        var chart3_2 = document.getElementById("chartContainer3-1");
+        chart3_2.classList.remove("hidden");
+      }
+      function fiveyears(){
+        var element = document.getElementById("ten");
+        element.classList.remove("active");
+        var element2 = document.getElementById("five");
+        element2.classList.add("active");
+        var chart3_1 = document.getElementById("chartContainer3");
+        chart3_1.classList.remove("hidden");
+        var chart3_2 = document.getElementById("chartContainer3-1");
+        chart3_2.classList.add("hidden");
+      }
         function Chart(){
 
           ////////////////////////////////////Calculate////////////////////////////
@@ -582,11 +614,38 @@
          var para2 = document.createElement("IMG");
         para2.setAttribute("src", "/S/Chart/img/new_p.png");
         para2.setAttribute("id","p-img");
-        document.getElementById("chartContainer3").appendChild(para2);
-      
+        document.getElementById("chartContainer3").appendChild(para2);      
       }
    }   
  }
+ 
+      /////////////////////////////////
+      ///////////////chart3.1//////////
+
+      var t1 = document.getElementById("p1-img");
+            if(t1 == null){
+        var y3 = document.getElementById("name").value;
+    for( var i = 0; i < 10*10; i++) {
+     var row1 = i / 10;
+     var col1 = i % 10;
+     if(col1 == 0 && row1 > 0) {
+        var para3_1 = document.createElement("DIV");
+       para3_1.setAttribute("style","clear:both");
+       document.getElementById("chartContainer3-1").appendChild(para3_1);
+     }
+      if (i < 90) {
+         var para3_2 = document.createElement("IMG");
+        para3_2.setAttribute("src", "/S/Chart/img/new_b.png");
+        para3_2.setAttribute("id","p1-img");
+        document.getElementById("chartContainer3-1").appendChild(para3_2);
+      } else {
+         var para3_3 = document.createElement("IMG");
+         para3_3.setAttribute("src", "/S/Chart/img/new_p.png");
+         para3_3.setAttribute("id","p1-img");
+        document.getElementById("chartContainer3-1").appendChild(para3_3);
+      }
+    }
+  }
 
         }  
         

@@ -205,10 +205,9 @@ body{
     width: 100px;
   }
   /* -----------------menu----------------------- */
-  /* #menu {
-    position: fixed;
-    width: 100%;
-  } */
+  #menu{
+    z-index: 2;
+  }
   #menu ul {
     background: #4c4c6b;
     list-style-type: none;
@@ -296,14 +295,41 @@ body{
     /* height: 300px;
     width: 33%; */
   }
-  #chartContainer3{
+  #chartContainer3 , #chartContainer3-1{
     /* position: relative;
     display: inline-block;
     clear: both; */
     /*  */
     height: 0px;
     top: 5px;
+
   }
+  .btn-5{
+    display: inline-block;
+    background-color: #fff;
+    border: solid 2px #dddddd;
+    border-radius: 5px;
+  }
+  .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 10;
+    border-bottom-right-radius: 10;
+}
+/* .btn-sm, .btn-group-sm > .btn {
+  min-width: 30px;
+  padding: 5px 6px;
+} */
+  .btn-default.active{
+    color: #333;
+    background-color: #cceef8;
+    border-color: #aaccff;
+    border-width: 2px;
+  }
+  .btn-default{
+    color: #333;
+    background-color: #fff;
+    border-color: #dddddd;
+    border-width: 2px;
+}
   .col-xs-12{
     float: left;
     width: 100%;
@@ -345,7 +371,7 @@ body{
     font-size: 16px;
     margin-bottom: 10px;
   }
-  #p-img{
+  #p-img, #p1-img{
     width: 30px;
   }
   .chart4{
