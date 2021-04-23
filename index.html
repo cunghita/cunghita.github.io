@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="templatemo-style.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
-    <script type="text/javascript" src="/S/Chart/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/S/Chart/canvasjs-3.2.11/canvasjs.min.js"></script>
+    <script type="text/javascript" src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="canvasjs-3.2.11/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/S/Chart/queries.css">
+    <link rel="stylesheet" href="queries.css">
     <title>Document</title>
 </head>
 <body>
     <div class="header">
-            <img class="Logo" src="img/logo3.png" alt="logo">
+            <img class="Logo" src="img/logo3.png" alt = "logo">
             <!-- <img class="Logo2" src="img/NHS.jpg" alt="logo" style="width: 150px;"> -->
     </div>
     <div id="menu">
@@ -81,7 +81,7 @@
           <div class='pets-breed'>
             <label for='pets-breed'>Age</label>
             <select name="age" id="age" class="SL">
-                <option value="select">Select Age</option>
+                <option value="Select Age">Select Age</option>
                 <option value="50">50</option>
                 <option value="51">51</option>
                 <option value="52">52</option>
@@ -183,9 +183,9 @@
         <div class='pets-spayed-neutered2'>
           <label for='pet-spayed'>Densitometer</label>
           <div class='radio-container2'>
-            <input checked='' id='Lunar' name='DXA' type='radio' value='by DXA GE Lunar'>
+            <input checked='' id='Lunar' name='DXA' type='radio' value='Lunar'>
             <label for='Lunar'>by DXA GE Lunar</label>
-            <input id='Hologic' name='DXA' type='radio' value='by DXA Hologic'>
+            <input id='Hologic' name='DXA' type='radio' value='Hologic'>
             <label for='Hologic'>by DXA Hologic</label>
           </div>
         </div>
@@ -246,7 +246,7 @@
               <!-- <div> -->
           <!-- <div id="chartContainer3" class="col-sm-7"> -->
             <div class="col-12" style="margin-bottom: 50px;">
-              Màn hình này hiển thị kết quả cho 100 người. Các kết quả này dựa trên các đầu vào và phương pháp điều trị bạn đã chọn               <span>
+              Màn hình này hiển thị kết quả cho 100 người. Các kết quả này dựa trên các đầu vào và phương pháp điều trị bạn đã chọn              <span>
                 <div role="group" class="btn-group btn-5">
                   <button class="btn btn-default btn-sm custom active" type="button" id="five" onclick="fiveyears()">5</button>
                   <button class="btn btn-default btn-sm custom" type="button" id="ten" onclick="tenyears()">10</button>
@@ -258,9 +258,9 @@
           </div>
           <div id="chartContainer3-1" class="hidden"></div>         
           <div class="col-md-6 offset-7 info-icon" style="padding-top:35px; position: absolute; margin-top: -50px;">          
-            <img src="/S/Chart/img/new_b.png" alt="" style="width: 30px;"> Số người không gãy xương
+            <img src="img/new_b.png" alt="" style="width: 30px;"> Số người không gãy xương
             <br>
-            <img src="/S/Chart/img/new_p.png" alt="" style="width: 30px;"> Số người gãy xương hông
+            <img src="img/new_p.png" alt="" style="width: 30px;"> Số người gãy xương
           </div>
           <!-- </div> -->
           <!-- </div> -->
@@ -276,7 +276,8 @@
               <h3>Quan trọng</h3>
               <p>Những kết quả này là ước tính dựa trên dữ liệu từ những người có đặc điểm tương tự. 
                 Có những yếu tố quan trọng khác ảnh hưởng đến kết quả.
-                 Chuyên gia của bạn sẽ giúp bạn đặt những kết quả này vào ngữ cảnh. </p>
+                 Chuyên gia của bạn sẽ giúp bạn đặt những kết quả này vào ngữ cảnh.</p>
+                 <p id="demo">aa</p>
             </section>
                   </div>
                 </div>
@@ -425,19 +426,40 @@
           var pfx = document.getElementById("Fra-50").value;
           var fall = document.getElementById("Fall-12").value;
           var checkbox = document.getElementById("disclaimer");
-
+          var actual = document.getElementById("BMD").value;
+        
           var ele = document.getElementsByName('gender');     
             for(i = 0; i < ele.length; i++) {
                 if(ele[i].checked)
                 var gender = ele[i].value;
             }
-          var ele2 = document.getElementsByName('YN-BMD');      
+
+          var ele2 = document.getElementsByName('YN-BMD');
+              
             for(i = 0; i < ele2.length; i++) {
                 if(ele2[i].checked)
                 var yn = ele2[i].value;
             }
 
-            if(age === "select" && tscore == '')
+            var ele3 = document.getElementsByName('DXA');
+              
+            for(i = 0; i < ele3.length; i++) {
+                if(ele3[i].checked)
+                var bmd = ele3[i].value;
+            }
+
+            if(tscore == '' && gender == "wo" && bmd == "Lunar"){
+              // tscore = Math.round(((actual - 1)/0.12));
+            var tscore2 = ((actual-1)/0.12).toFixed(1);
+              //document.getElementById("demo").innerHTML = tscore;
+              //document.getElementById("demo").innerHTML = bmd;
+            }
+            else if(tscore == '' && gender == "men"  && bmd == "Lunar")
+            {
+              tscore = ((actual-1.04)/0.12).toFixed(0);
+            }
+
+          if(age === "select" && tscore == '')
             {
               $('.warning').removeClass('hidden');
               document.getElementById("check-err").classList.add("hidden");
@@ -451,7 +473,8 @@
               document.getElementById("check-err").classList.add("hidden");
               document.getElementById("age-err").classList.remove("hidden");
             }
-            else if(tscore > 4 || tscore < -5 || tscore == '')
+            
+            else if(tscore > 4 || tscore < -5 || tscore == '' && actual == '')
             {
               $('.warning').removeClass('hidden');
               document.getElementById("check-err").classList.add("hidden");
@@ -465,8 +488,27 @@
               document.getElementById("age-err").classList.add("hidden");
               document.getElementById("check-err").classList.remove("hidden");
             }
-             else{
-              $('.warning').addClass('hidden');
+            else{
+
+              // window.scroll({
+              // top: 2500, 
+              // left: 0, 
+              // behavior: 'smooth'
+      //         // });
+      //         $("#next").click(function(){
+      //      $("#next").dblclick();      
+      //   });
+      //   $("#next").dblclick(function(){
+      //     document.querySelector('.tm-gallery-page').scrollIntoView({ 
+      //              behavior: 'smooth'
+      //             });        
+      // });
+
+              document.querySelector('#next').scrollIntoView({ 
+                   behavior: 'smooth'
+                  });
+              window.scrollBy(0,1000);
+
           var b = []; //{"any" :123, "aom":45 };
           b["wo-hip-bmd"] ={"b1":0.0507,"b2":-0.8417,"b3":0.8127,"b4":0.3614,"So5":0.999896685,"So10":0.999793070};
           b["wo-any-bmd"] = {"b1":0.0321,"b2":-0.4022,"b3":0.5691,"b4":0.2038,"So5":0.995750118,"So10":0.990905138};
@@ -475,22 +517,31 @@
           b["men-hip-bmd"] ={"b1":0.107,"b2":-1.007,"b3":0.599,"b4":0.212,"So5":0.999998862,"So10":0.999997778};
           b["men-any-bmd"]={"b1":0.0883,"b2":-0.2986,"b3":0.8454,"b4":0.0981,"So5":0.999921076,"So10":0.999848975};
           b["men-hip-wei"] ={"b1":0.138,"b2":-0.008,"b3":0.854,"b4":0.233,"So5":0.999998862,"So10":0.999997778};
-          b["men-any-wei"]={"b1":0.09071,"b2":-0.00765,"b3":1.00818,"b4":0.12797,"So5":0.999921076,"So10":0.999848975};       
+          b["men-any-wei"]={"b1":0.09071,"b2":-0.00765,"b3":1.00818,"b4":0.12797,"So5":0.999921076,"So10":0.999848975};
+
           var hip = b[gender+'-hip-'+yn];
           var any = b[gender+'-any-'+yn];
-           if(wei == '')
-           {
-            var n = tscore;
-           }
-           else{
-            var n = wei;
-           }
+          //  if(wei == '')
+          //  {
+          //   var n = tscore;
+          //  }
+          //  else if(tscore == '')
+          //  {
+          //    var n = tscore2;
+          //  }
+          //  else{
+          //   var n = wei;
+          //  }
+
+          n = tscore2;
+
            var y_hip=  hip['b1']*age + hip['b2']*n + hip['b3']*pfx + hip['b4']*fall;
            var y_any =  any['b1']*age + any['b2']*n + any['b3']*pfx + any['b4']*fall;
-           var risk5_hip =Math.round ((1 - Math.pow(hip['So5'],Math.exp(y_hip)))*100, 1);
-           var risk10_hip =Math.round ((1 - Math.pow(hip['So10'],Math.exp(y_hip)))*100, 1);
-           var risk5_any =Math.round ((1 - Math.pow(any['So5'],Math.exp(y_any)))*100, 1);
-           var risk10_any =Math.round ((1 - Math.pow(any['So10'],Math.exp(y_any)))*100, 1);
+           var risk5_hip =((1 - Math.pow(hip['So5'],Math.exp(y_hip)))*100).toFixed(1);
+           var risk10_hip =((1 - Math.pow(hip['So10'],Math.exp(y_hip)))*100).toFixed(1);
+           var risk5_any =((1 - Math.pow(any['So5'],Math.exp(y_any)))*100).toFixed(1);
+          //  var risk10_any =Math.round ((1 - Math.pow(any['So10'],Math.exp(y_any)))*100, 1);
+          var risk10_any = ((1 - Math.pow(any['So10'],Math.exp(y_any)))*100).toFixed(1);
             
            //////////////////////////////////////////////////////////////////////////
             $('.offset-1').removeClass('hidden');
@@ -504,7 +555,7 @@
 
         var chart = new CanvasJS.Chart("chartContainer1", { 
         // width: 600,
-        //height: 800,           
+         //height: 600,           
       title:{
         text: "5 & 10 year Fracture Risk",
       },
@@ -516,28 +567,28 @@
       data: [  //array of dataSeries     
       { //dataSeries - first quarter
    /*** Change type "column" to "bar", "area", "line" or "pie"***/          
-       legendText: "Hip Fracture",
+       legendText: "Any Fracture",
        showInLegend: true,
        type: "column",
         yValueFormatString: "#,##0.0#\"%\"",
        name: "First Quarter",
        dataPoints: [
-       { label: "5 years", y: +risk5_hip , indexLabel: +risk5_hip +"% risk"},
- 
-       { label: "10 years", y: +risk5_any , indexLabel: +risk5_any +"% risk"}
+       { label: "5 years", y: +risk5_any , indexLabel: +risk5_any +"% risk"},
+
+      { label: "10 years", y: +risk10_any , indexLabel: +risk10_any +"% risk"}
        ]
      },
      { //dataSeries - second quarter
 
       type: "column",
-      legendText: "Any Fracture",
+      legendText: "Hip Fracture",
       showInLegend: true,
        yValueFormatString: "#,##0.0#\"%\"",
       name: "Second Quarter",                
       dataPoints: [
-      { label: "5 years", y: +risk10_hip , indexLabel: +risk10_hip +"% risk"},
-
-      { label: "10 years", y: +risk10_any , indexLabel: +risk10_any +"% risk"}
+      { label: "5 years", y: +risk5_hip , indexLabel: +risk5_hip +"% risk"},
+      
+      { label: "10 years", y: +risk10_hip , indexLabel: +risk10_hip +"% risk"}
       ]
     }
     ]
@@ -561,16 +612,16 @@
      }
       if (i < tb5) {
          //document.write("<div class='square'></div>");
-         //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
+         //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
          var para = document.createElement("IMG");
-        para.setAttribute("src", "/S/Chart/img/new_p.png");
+        para.setAttribute("src", "img/new_p.png");
         para.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para);
       } else {
          //document.write("<div class='empty-square'></div>");
-         //document.getElementById("chartContainer3").innerHTML = "<img src='/S/Chart/img/purple.png'>";
+         //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
          var para2 = document.createElement("IMG");
-        para2.setAttribute("src", "/S/Chart/img/new_b.png");
+        para2.setAttribute("src", "img/new_b.png");
         para2.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para2);      
       }
@@ -579,7 +630,7 @@
  
       /////////////////////////////////
       ///////////////chart3.1//////////
-      var tb10 = Math.round((risk10_hip + risk10_any)/2);
+     var tb10 = Math.round((risk10_hip + risk10_any)/2);
       var t1 = document.getElementById("p1-img");
             if(t1 == null){
         var y3 = document.getElementById("name").value;
@@ -593,18 +644,17 @@
      }
       if (i < tb10) {
          var para3_2 = document.createElement("IMG");
-        para3_2.setAttribute("src", "/S/Chart/img/new_p.png");
+        para3_2.setAttribute("src", "img/new_p.png");
         para3_2.setAttribute("id","p1-img");
         document.getElementById("chartContainer3-1").appendChild(para3_2);
       } else {
          var para3_3 = document.createElement("IMG");
-         para3_3.setAttribute("src", "/S/Chart/img/new_b.png");
+         para3_3.setAttribute("src", "img/new_b.png");
          para3_3.setAttribute("id","p1-img");
         document.getElementById("chartContainer3-1").appendChild(para3_3);
       }
     }
   }
-
 }
         }  
         
@@ -672,13 +722,13 @@
         var cach= i%5;
         if(i<=27){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "/S/Chart/SVG/rect2.svg");
+      verti1.setAttribute("src", "SVG/rect2.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4").appendChild(verti2);
           };
@@ -694,13 +744,13 @@
         var cach= i%5;
         if(i<=56){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "/S/Chart/SVG/rect3.svg");
+      verti1.setAttribute("src", "SVG/rect3.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_2").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_2").appendChild(verti2);
           };
@@ -716,13 +766,13 @@
         var cach= i%5;
         if(i<=66){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "/S/Chart/SVG/rect3.svg");
+      verti1.setAttribute("src", "SVG/rect3.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_3").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_3").appendChild(verti2);
           };
@@ -738,13 +788,13 @@
         var cach= i%5;
         if(i<=39){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "/S/Chart/SVG/rect4.svg");
+      verti1.setAttribute("src", "SVG/rect4.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_4").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "/S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_4").appendChild(verti2);
           };
