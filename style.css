@@ -281,7 +281,7 @@ body{
   margin-right: 15px;
 }
 .cnt-head{
-  
+  margin-top: 86px;
   margin-left: -25px;
   margin-right: -30px;
 }
@@ -300,7 +300,7 @@ body{
   opacity: 0.25;
   background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
-.link .btn , .f-header .btn{
+.link .btn , .f-header .btn , .column-item .btn{
   background-color: #2571d6;
   color: white;
   font-weight: 600;
@@ -909,12 +909,13 @@ width: 40%;
 width: 30%;
 }
 .footer-left h3{
-color: #ffffff;
+color: #890bf0;
   font: normal 36px 'Cookie', cursive;
   margin: 0;
 }
 .footer-left h3 span{
-color: #5383d3;
+color: #fff;
+font-size: 20px;
 }
 .footer-links{
 color: #ffffff;
