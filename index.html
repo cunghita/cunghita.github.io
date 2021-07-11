@@ -91,8 +91,14 @@
             <input id='name' name="name" placeholder="Họ tên" type='text' autocomplete="off">
           </div>
           <div class="pets-name2">
-            <label for="Weight">Cân nặng</label>
-          <input type="number" name="weight" id="weight" placeholder="kg" autocomplete="off">
+            <label for="Weight">Cân nặng
+              <div id="myDIV2" style = "display: inline;">
+                <button class="btn-p-k active3" onclick="Pound()">Pounds</button> 
+                <button class="btn-p-k" onclick="Kilogram()">Kilogram</button>
+              </div>
+            </label>
+          <input class="pound" type="number" name="weight" id="weight" placeholder="Pounds" autocomplete="off">
+          <input class="kg hidden2" type="number" name="weight" id="weight" placeholder="kg" autocomplete="off">
           </div>
           <div class="pets-name3">
               <label for="">Đã từng gãy xương sau 50 tuổi?
@@ -104,24 +110,6 @@
                   <option value="3">3 hoặc hơn</option>
               </select>
           </div>
-          <!-- <div style="">
-            <label class="container">One
-              <input type="checkbox" checked="checked">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Two
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Three
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Four
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-          </div> -->
         </div>
         <div class='set'>
           <div class='pets-breed'>
@@ -178,8 +166,14 @@
             </select>
           </div>
           <div class="pets-name2">
-            <label for="Height">Chiều cao</label>
-          <input type="number" name="height" id="height" placeholder="m" autocomplete="off">
+            <label for="Height">Chiều cao
+              <div id="myDIV" style = "display: inline;">
+                <button class="btn-f-m active2" onclick="Inch()">Inches</button> 
+                <button class="btn-f-m" onclick="Feet()">Feet</button>
+              </div>
+            </label>
+          <input class="inch" type="number" name="height" id="height" placeholder="in" autocomplete="off">
+          <input class="feet hidden" type="number" name="height" id="height" placeholder="foot" autocomplete="off">
           </div>
           <div class='pets-birthday'>
             <label for='pets-birthday'>Có té ngã trong 12 tháng qua?</label>
@@ -243,6 +237,30 @@
           </div> -->
           <div class='pets-name2 pets-birthday'>
             <label for="">Các bệnh khác</label>
+            <div class="cb-contai">
+              <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
+              <label for="c1" class="c1"><span class="checkmark"></span>Cardiovascular disease</label>
+              <div style="display: inline; margin: 0 47px;">
+                <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
+              <label for="c1" class="c1"><span class="checkmark"></span>Cancer</label>
+              </div>
+              <div style="display: inline; margin-left: 73px;">
+                <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
+                <label for="c1" class="c1"><span class="checkmark"></span>Type 2 diabetes</label>
+              </div>
+              <div style="display: block; margin-top: 10px;">
+                <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
+              <label for="c1" class="c1"><span class="checkmark"></span>Neuromuscular</label>
+              <div style="display: inline; margin: 0 95px;">
+                <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
+              <label for="c1" class="c1"><span class="checkmark"></span>Rheumatoid arthritis</label>
+              </div>
+              <div style="display: inline; margin-left: -55px;">
+                <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
+              <label for="c1" class="c1"><span class="checkmark"></span>COPD</label>
+              </div>
+              </div>
+            </div>
           </div>
           <!-- <div class="pets-name">
             <label for="BMD">Chỉ số BMD
@@ -274,17 +292,16 @@
           </div>           -->
         </div>
         <!-- <div class="or">Hoặc</div> -->
-        <div class="set">
-          <div>
-            <input type="checkbox" id="c1" name="cc" />
-            <label for="c1"><span></span>Check Box 1</label>
+        <!-- <div class="set">
+          <div class="cb-contai">
+            <input type="checkbox" id="c1" name="cc" style="width:20px; height: auto;"/>
+            <label for="c1"><span class="checkmark"></span>Check Box 1</label>
+            <div style="display: block;">
+              <input type="checkbox" id="c1" name="cc" style="width:20px; height: auto;"/>
+            <label for="c1"><span class="checkmark"></span>Check Box 1</label>
+            </div>
           </div>
-          <div>
-            <input type="checkbox" id="c1" name="cc" />
-            <label for="c1"><span></span>Check Box 1</label>
-          </div>
-          <div></div>
-        </div>
+        </div> -->
  
         <!-- <div class="pets-name">
           <label for="BMD">Actual BMD 
@@ -341,7 +358,7 @@
     </div>
     
     <!-- <button id='next' onclick="Chart()">Next</button> -->
-    <div class="row">
+    <div class="row" style="margin-top: -124px;">
       <div class="col-sm-12">
     <div class="row">
     <div class="col-md-10 col-md offset-1">
@@ -657,6 +674,40 @@
   </div>
 </footer>
     <script>
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn-f-m");
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active2");
+        current[0].className = current[0].className.replace("active2", "");
+          this.className += " active2";
+        });
+        }  
+        var header2 = document.getElementById("myDIV2");
+        var btns2 = header2.getElementsByClassName("btn-p-k");
+        for (var i = 0; i < btns2.length; i++) {
+        btns2[i].addEventListener("click", function() {
+        var current2 = document.getElementsByClassName("active3");
+        current2[0].className = current2[0].className.replace("active3", "");
+          this.className += " active3";
+        });
+        }
+        function Pound(){
+          $('.kg').addClass('hidden2');
+          $('.pound').removeClass('hidden');
+        } 
+        function Kilogram(){
+          $('.pound').addClass('hidden');
+          $('.kg').removeClass('hidden2');
+        } 
+        function Inch(){
+          $('.feet').addClass('hidden');
+          $('.inch').removeClass('hidden');
+        }
+        function Feet(){
+          $('.inch').addClass('hidden');
+          $('.feet').removeClass('hidden');
+        }
       function Visi(){
         $('.pets-name').addClass('hidden');
         $('.pets-name2').removeClass('hidden');
