@@ -91,13 +91,13 @@
             <input id='name' name="name" placeholder="Họ tên" type='text' autocomplete="off">
           </div>
           <div class="pets-name2">
-            <label for="Weight">Cân nặng
-              <div id="myDIV2" style = "display: inline;">
+            <label for="Weight">Weight
+              <!-- <div id="myDIV2" style = "display: inline;">
                 <button class="btn-p-k active3" onclick="Pound()">Pounds</button> 
                 <button class="btn-p-k" onclick="Kilogram()">Kilogram</button>
-              </div>
+              </div> -->
             </label>
-          <input class="pound" type="number" name="weight" id="weight" placeholder="Pounds" autocomplete="off">
+          <input class="pound" type="number" name="weight" id="weight" placeholder="kg" autocomplete="off">
           <input class="kg hidden2" type="number" name="weight" id="weight" placeholder="kg" autocomplete="off">
           </div>
           <div class="pets-name3">
@@ -166,13 +166,13 @@
             </select>
           </div>
           <div class="pets-name2">
-            <label for="Height">Chiều cao
-              <div id="myDIV" style = "display: inline;">
+            <label for="Height">Height
+              <!-- <div id="myDIV" style = "display: inline;">
                 <button class="btn-f-m active2" onclick="Inch()">Inches</button> 
                 <button class="btn-f-m" onclick="Feet()">Feet</button>
-              </div>
+              </div> -->
             </label>
-          <input class="inch" type="number" name="height" id="height" placeholder="in" autocomplete="off">
+          <input class="inch" type="number" name="height" id="height" placeholder="cm" autocomplete="off">
           <input class="feet hidden" type="number" name="height" id="height" placeholder="foot" autocomplete="off">
           </div>
           <div class='pets-birthday'>
@@ -235,9 +235,66 @@
             </label>
             <input id='T-score' name="T-score" type='number' autocomplete="off">
           </div> -->
+          <div style="display: flex;">
+            <div>
+              <label for="">Các bệnh khác</label>
+              <br>
+              <label for="" style="margin-top: 10px;">Cardiovascular disease</label>
+              <br>
+              <label for="" style="margin-top: 10px;">Cancer</label>
+              <br>
+              <label for="" style="margin-top: 10px;">Type 2 diabetes</label>
+              <br>
+              <label for="" style="margin-top: 10px;">Neuromuscular</label>
+              <br>
+              <label for="" style="margin-top: 10px;">Rheumatoid arthritis</label>
+              <br>
+              <label for="" style="margin-top: 10px;">COPD</label>
+            </div>
+            <div style="margin-top: 10px;">
+              <br>
+              <input style = "width:20px; height:auto;" type="radio" id="r2" name="rr" checked/>
+              <label for="r2"><span></span>No</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr2" checked/>
+              <label for="r3"><span></span>No</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr3" checked/>
+              <label for="r3"><span></span>No</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr4" checked/>
+              <label for="r3"><span></span>No</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr5" checked/>
+              <label for="r3"><span></span>No</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr6" checked/>
+              <label for="r3"><span></span>No</label>
+            </div>
+            <div style="margin-top: 10px; margin-left: -123px;">
+              <br>
+              <input style = "width:20px; height:auto;" type="radio" id="r2" name="rr" />
+              <label for="r2"><span></span>Yes</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr2" />
+              <label for="r3"><span></span>Yes</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr3" />
+              <label for="r3"><span></span>Yes</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr4" />
+              <label for="r3"><span></span>Yes</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr5" />
+              <label for="r3"><span></span>Yes</label>
+              <br>
+              <input style = "width:20px; height:auto; margin-top: 10px;" type="radio" id="r3" name="rr6" />
+              <label for="r3"><span></span>Yes</label>
+            </div>
+          </div>
           <div class='pets-name2 pets-birthday'>
-            <label for="">Các bệnh khác</label>
-            <div class="cb-contai">
+            <!-- <label for="">Các bệnh khác</label> -->
+            <!-- <div class="cb-contai">
               <input type="checkbox" id="c1" name="cc" style="width:20px; height: 15px;"/>
               <label for="c1" class="c1"><span class="checkmark"></span>Cardiovascular disease</label>
               <div style="display: inline; margin: 0 47px;">
@@ -260,7 +317,15 @@
               <label for="c1" class="c1"><span class="checkmark"></span>COPD</label>
               </div>
               </div>
-            </div>
+            </div> -->
+            <!-- <br>
+            <label for="">Cardiovascular disease</label>
+            <input type="radio" id="r2" name="rr" />
+               <label for="r2"><span></span>Radio Button 2</label> -->
+            <!-- <label class="contai" style="display:inline-block">Yes
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label> -->
           </div>
           <!-- <div class="pets-name">
             <label for="BMD">Chỉ số BMD
