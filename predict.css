@@ -142,4 +142,6 @@ body
 #tool-bone [type="checkbox"]{
     border: 0.15em solid #434241;
     border-radius: 100%;
-}
+    height: 40px;
+    width: 40px;
+}                   
