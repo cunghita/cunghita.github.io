@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="predict.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tool-bone" id="tool-bone" style="height: auto;">
+        <div class="result-page">
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Nhập</h3>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input id = "" class="predict-input predict-input-5" type="text" name="height" id="height" >
+                        </div>
+                    </div>
+                </div>
+                <button class="btn" onclick="Result()">
+                    Get
+                </button>
+            </div>
+        </div>
+        <div class="panel-light">
+            <div id="tm-gallery-page-vạch" class="tm-gallery-page hidden" >
+                <!-- <div id="chartContainer2"></div> -->
+                <div class="chart4">
+                  <p>Nguy cơ gãy xương do loãng xương trong vòng 5 và 10 năm tới.</p>
+                  <div class="first-chart">
+                  <span>Nếu không điều trị loãng xương,
+                    <span id="about-b1">có khoảng </span>
+                    <div id="childDiv" class="hidden"></div>
+                    <b class="b1">gãy bất kỳ loại xương nào</b> trong 5 năm tới.
+                  </span>
+                  <div class="row">
+                    <div class="col-1 percent">
+                      <span id="num-percent"></span>
+                    </div>
+                    <div class="col-11 per-chart" id="chartContainer4">
+                    </div>
+                  </div>
+                </div>
+                <div class="second-chart">
+                  <span>
+                    Nếu điều trị loãng xương,
+                    <span id="about-b2">có khoảng </span>
+                    <div id="childDiv2" class="hidden"></div>
+                    <b class="b2">gãy bất kỳ loại xương nào</b> trong 5 năm tới.
+                  </span>
+                  <div class="row">
+                    <div class="col-1 percent">
+                      <span id="num-percent2"></span>
+                    </div>
+                    <div class="col-11 per-chart" id="chartContainer4_2"></div>
+                  </div>
+                </div>
+                <div class="third-chart">
+                  <span>
+                    Nếu không điều trị loãng xương,
+                    <span id="about-b3">có khoảng </span>
+                    <div id="childDiv3" class="hidden"></div>
+                    <b class="b3">gãy xương hông</b> trong 5 năm tới.
+                  </span>
+                  <div class="row">
+                    <div class="col-1 percent">
+                      <span id="num-percent3"></span>
+                    </div>
+                    <div class="col-11 per-chart" id="chartContainer4_3"></div>
+                  </div>
+                </div>
+                <div class="fourth-chart">
+                  <span>
+                    Nếu điều trị loãng xương,
+                    <span id="about-b4">có khoảng </span>
+                    <div id="childDiv4" class="hidden"></div>
+                    <b class="b4">gãy xương hông</b> trong 5 năm tới.
+                  </span>
+                  <div class="row">
+                    <div class="col-1 percent">
+                      <span id="num-percent4"></span>
+                    </div>
+                    <div class="col-11 per-chart" id="chartContainer4_4"></div>
+                  </div>
+                </div>
+                <div class="first-note">
+                  <svg width="14" height="14">
+                    <circle cx="7" cy="7" r="7" fill="#2222AA" opacity="1" stroke="none" stroke-width="1"></circle>
+                  </svg>
+                  Gãy bất kỳ loại xương nào (any osteoporotic fracture)
+                </div>
+                <div class="second-note">
+                  <svg width="14" height="14">
+                    <circle cx="7" cy="7" r="7" fill="#660044" opacity="1" stroke="none" stroke-width="1"></circle>
+                  </svg>
+                  Gãy xương hông (hip fracture)
+                </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function Result(){
+            document.getElementById("tm-gallery-page-vạch").classList.remove("hidden");
+
+            var number2 = 100;
+    var text = document.createTextNode(10+' trong '+number2+' người giống bạn sẽ ');
+        var child = document.getElementById('childDiv');
+        var pa = document.getElementById('about-b1');
+          child.parentNode.insertBefore(text, child);
+          document.getElementById('num-percent').innerHTML = 10+'%';
+
+          var text2 = document.createTextNode(12+' trong '+number2+' người giống bạn sẽ ');
+          var child2 = document.getElementById('childDiv2');
+        var pa2 = document.getElementById('about-b2');
+          child2.parentNode.insertBefore(text2, child2);
+          document.getElementById('num-percent2').innerHTML = 12+'%';
+
+          var text3 = document.createTextNode(15+' trong '+number2+' người giống bạn sẽ ');
+          var child3 = document.getElementById('childDiv3');
+        var pa3 = document.getElementById('about-b3');
+          child3.parentNode.insertBefore(text3, child3);
+          document.getElementById('num-percent3').innerHTML = 15+'%';
+
+          var text4 = document.createTextNode(17+' trong '+number2+' người giống bạn sẽ ');
+          var child4 = document.getElementById('childDiv4');
+        var pa4 = document.getElementById('about-b4');
+          child4.parentNode.insertBefore(text4, child4);
+          document.getElementById('num-percent4').innerHTML = 17+'%';
+
+          ////////////blue////////////////
+  for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=10){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "SVG/rect2.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4").appendChild(sp);
+          }
+    }
+         ////////////purple////////////
+  for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=12){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "SVG/rect2.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_2").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_2").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4_2").appendChild(sp);
+          }
+    }
+    /////////////////
+    for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=15){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "SVG/rect3.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_3").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_3").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4_3").appendChild(sp);
+          }
+    }
+    /////////////pink///////////////
+    for(var i = 1; i <= 100; i++){
+        var cach= i%5;
+        if(i<=17){
+          var verti1 = document.createElement("IMG");
+      verti1.setAttribute("src", "SVG/rect3.svg");
+      verti1.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_4").appendChild(verti1);
+          }
+          else{
+          var verti2 = document.createElement("IMG");
+      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("id","v-img");
+      document.getElementById("chartContainer4_4").appendChild(verti2);
+          };
+          
+        if(cach==0)
+          {
+        var sp = document.createTextNode(" ");
+          document.getElementById("chartContainer4_4").appendChild(sp);
+          }
+    }
+        }
+    </script>
+</body>
+</html>
