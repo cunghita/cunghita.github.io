@@ -14,6 +14,10 @@ body
     margin: 0;
     padding: 0;
 }
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  
 #tool-bone{
     font-family: Roboto,sans-serif;
     font-size: 16px;
@@ -144,4 +148,23 @@ body
     border-radius: 100%;
     height: 40px;
     width: 40px;
-}                   
+} 
+#tool-bone .btn{
+    background-color: #FFE611;
+    font-family: Roboto,sans-serif;
+    color: #434241;
+    padding: 0.4em 1.4em 0.4em 1.4em;
+    font-size: 1.5em;
+    font-weight: 700;
+    border: none;
+    min-width: 8em;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    border-bottom: 0.125em #434241 solid;
+    cursor: pointer;
+}
+#tool-bone .btn:not(.heartage-locked):hover, #tool-bone .btn:not(.heartage-locked):focus {
+    background-color: #434241;
+    color: #FFE611;
+    border-bottom: 0.125em #FFE611 solid;
+}

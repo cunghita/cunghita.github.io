@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="predict.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tool-bone" id="tool-bone" style="height: auto;">
+        <div class="bone-page-form">
+            <h2>Prognosis of fracture risk due to osteoporosis</h2>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Full Name (optional)</h3>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input" type="text" style="width:12.75em;">
+                        </div>
+                    </div>
+                    <h3>Age</h3>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input" type="text" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Gender</h3>
+                    <p>
+                        Your sex may affect your heart age, so select your sex at birth for this test.
+                         You can discuss the result with your GP for a more personal interpretation.
+                    </p>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="men" name="gender" value="men">
+                            <label class="radios_label" for="men">                               
+                                Male                                
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="wo" name="gender" value="wo">
+                            <label class="radios_label" for="wo">                               
+                                Female                                
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Height</h3>
+                    <p>Centimetres</p>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input predict-input-5" type="text" name="height" id="height" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Weight</h3>
+                    <p>
+                        Kilograms
+                    </p>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input predict-input-5" type="text" name="weight" id="weight">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Fractures since the age of 50</h3>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="zero" name="frac-50" value="0">
+                            <label class="radios_label" for="zero">                               
+                                0                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="one" name="frac-50" value="1">
+                            <label class="radios_label" for="one">                               
+                                1                              
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="two" name="frac-50" value="2">
+                            <label class="radios_label" for="two">                               
+                                2                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="three" name="frac-50" value="3">
+                            <label class="radios_label" for="three">                               
+                                3 or more                              
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Falls over last 12 months</h3>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="fzero" name="fall-12" value="0">
+                            <label class="radios_label" for="fzero">                               
+                                0                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="fone" name="fall-12" value="1">
+                            <label class="radios_label" for="fone">                               
+                                1                              
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="ftwo" name="fall-12" value="2">
+                            <label class="radios_label" for="ftwo">                               
+                                2                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="fthree" name="fall-12" value="3">
+                            <label class="radios_label" for="fthree">                               
+                                3 or more                              
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>T-scores</h3>
+                    <p>
+                        T-score is the BMD value compared with young normal people of the same sex and general ethnicity. 
+                        These are usually listed prominently on the BMD report.
+                        You must enter the + or - in front of the value as shown.
+                    </p>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="T-score" id="T-score" min="-5" max="4">
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Actual BMD</h3>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="BMD" id="BMD" min="0" max="10">
+                        </div>
+                    </div>
+                    <h3>Densitometer</h3>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="DXA_GE" name="Densitometer" value="DXA_GE" checked>
+                            <label class="radios_label" for="DXA_GE">                               
+                                by DXA GE Lunar                                
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="DXA_Holo" name="Densitometer" value="DXA_Holo">
+                            <label class="radios_label" for="DXA_Holo">                               
+                                by DXA Hologic                               
+                            </label>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Diseases</h3>
+                    <div class="" style="display: flex; justify-content: space-between;">
+                        <div class="disea">
+                            <p>
+                                Cardiovascular disease
+                            </p>
+                            <p class="mtop-40">
+                                Cancer
+                            </p>
+                            <p class="mtop-40">
+                                Type 2 diabetes
+                            </p>
+                            <p class="mtop-40">
+                                Neuromuscular
+                            </p>
+                            <p class="mtop-40">
+                                Rheumatoid arthritis
+                            </p>
+                            <p class="mtop-40">
+                                COPD
+                            </p>
+                        </div>
+                        <div class="radios">
+                            <div class="radios-item">
+                                <input type="radio" id="no1" name="Cardiovascular" value="no1">
+                                <label class="radios_label" for="no1">                               
+                                    No                               
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="no2" name="cancer" value="no2">
+                                <label class="radios_label" for="no2">                               
+                                    No                               
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="no3" name="Type_2_diabetes" value="no3">
+                                <label class="radios_label" for="no3">                               
+                                    No                               
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="no4" name="Neuromuscular" value="no4">
+                                <label class="radios_label" for="no4">                               
+                                    No                               
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="no5" name="Rheumatoid_arthritis" value="no5">
+                                <label class="radios_label" for="no5">                               
+                                    No                               
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="no6" name="COPD" value="no6">
+                                <label class="radios_label" for="no6">                               
+                                    No                               
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radios">
+                            <div class="radios-item">
+                                <input type="radio" id="yes1" name="Cardiovascular" value="yes1">
+                                <label class="radios_label" for="yes1">                               
+                                    Yes                               
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="yes2" name="cancer" value="yes2">
+                                <label class="radios_label" for="yes2">                               
+                                    Yes                             
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="yes3" name="Type_2_diabetes" value="yes3">
+                                <label class="radios_label" for="yes3">                               
+                                    Yes                     
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="yes4" name="Neuromuscular" value="yes4">
+                                <label class="radios_label" for="yes4">                               
+                                    Yes                         
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="yes5" name="Rheumatoid_arthritis" value="yes5">
+                                <label class="radios_label" for="yes5">                               
+                                    Yes                           
+                                </label>
+                            </div>
+                            <div class="radios-item">
+                                <input type="radio" id="yes6" name="COPD" value="yes6">
+                                <label class="radios_label" for="yes6">                               
+                                    Yes                               
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Disclaimer</h3>
+                    <p>
+                        The results produced by our calculator should serve as a guide only.
+                         If concerned about your fracture risk, it is also important to consult your doctor or a bone specialist.
+                    </p>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="checkbox" name="check" id="check">
+                            <label for="check" style="margin-left: 10px; position: absolute;">I have read and understand the disclaimer</label>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <button class="btn" id="calculate-btn">
+            Get your results
+        </button>
+    </div>
+</body>
+</html>
