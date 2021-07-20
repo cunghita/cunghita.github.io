@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="predict.css">
-    <link rel="stylesheet" href="/S/Chart/style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <title>Document</title>
 </head>
@@ -32,59 +32,53 @@
                 <div class="chart4">
                   <p>Nguy cơ gãy xương do loãng xương trong vòng 5 và 10 năm tới.</p>
                   <div class="first-chart">
-                  <span>Nếu không điều trị loãng xương,
+                  <!-- <span>Nếu không điều trị loãng xương,
                     <span id="about-b1">có khoảng </span>
                     <div id="childDiv" class="hidden"></div>
                     <b class="b1">gãy bất kỳ loại xương nào</b> trong 5 năm tới.
+                  </span> -->
+                  <span class="row-title">
+                    Your 5-year risk of any fracture 
                   </span>
                   <div class="row">
-                    <div class="col-1 percent">
+                    <div class="col-3 percent col-3-w">
                       <span id="num-percent"></span>
                     </div>
-                    <div class="col-11 per-chart" id="chartContainer4">
+                    <div class="col-8 per-chart" id="chartContainer4">
                     </div>
                   </div>
                 </div>
                 <div class="second-chart">
-                  <span>
+                  <!-- <span>
                     Nếu điều trị loãng xương,
                     <span id="about-b2">có khoảng </span>
                     <div id="childDiv2" class="hidden"></div>
                     <b class="b2">gãy bất kỳ loại xương nào</b> trong 5 năm tới.
-                  </span>
+                  </span> -->
                   <div class="row">
-                    <div class="col-1 percent">
+                    <div class="col-3 percent col-3-w-2">
                       <span id="num-percent2"></span>
                     </div>
-                    <div class="col-11 per-chart" id="chartContainer4_2"></div>
+                    <div class="col-8 per-chart" id="chartContainer4_2"></div>
                   </div>
                 </div>
                 <div class="third-chart">
-                  <span>
-                    Nếu không điều trị loãng xương,
-                    <span id="about-b3">có khoảng </span>
-                    <div id="childDiv3" class="hidden"></div>
-                    <b class="b3">gãy xương hông</b> trong 5 năm tới.
+                  <span class="row-title" style="margin-top: 10px; display: block;">
+                    Your 5-year risk of hip fracture
                   </span>
                   <div class="row">
-                    <div class="col-1 percent">
+                    <div class="col-3 percent col-3-w">
                       <span id="num-percent3"></span>
                     </div>
-                    <div class="col-11 per-chart" id="chartContainer4_3"></div>
+                    <div class="col-8 per-chart" id="chartContainer4_3"></div>
                   </div>
                 </div>
                 <div class="fourth-chart">
-                  <span>
-                    Nếu điều trị loãng xương,
-                    <span id="about-b4">có khoảng </span>
-                    <div id="childDiv4" class="hidden"></div>
-                    <b class="b4">gãy xương hông</b> trong 5 năm tới.
-                  </span>
                   <div class="row">
-                    <div class="col-1 percent">
+                    <div class="col-3 percent col-3-w">
                       <span id="num-percent4"></span>
                     </div>
-                    <div class="col-11 per-chart" id="chartContainer4_4"></div>
+                    <div class="col-8 per-chart" id="chartContainer4_4"></div>
                   </div>
                 </div>
                 <div class="first-note">
@@ -237,42 +231,42 @@
             document.getElementById("tm-gallery-page-hình").classList.remove("hidden2");
 
             var number2 = 100;
-    var text = document.createTextNode(10+' trong '+number2+' người giống bạn sẽ ');
-        var child = document.getElementById('childDiv');
-        var pa = document.getElementById('about-b1');
-          child.parentNode.insertBefore(text, child);
-          document.getElementById('num-percent').innerHTML = 10+'%';
+    // var text = document.createTextNode(10+' trong '+number2+' người giống bạn sẽ ');
+    //     var child = document.getElementById('childDiv');
+    //     var pa = document.getElementById('about-b1');
+    //       child.parentNode.insertBefore(text, child);
+          document.getElementById('num-percent').innerHTML ='Without treatment:  ' +10+'%';
 
-          var text2 = document.createTextNode(12+' trong '+number2+' người giống bạn sẽ ');
-          var child2 = document.getElementById('childDiv2');
-        var pa2 = document.getElementById('about-b2');
-          child2.parentNode.insertBefore(text2, child2);
-          document.getElementById('num-percent2').innerHTML = 12+'%';
+        //   var text2 = document.createTextNode(12+' trong '+number2+' người giống bạn sẽ ');
+        //   var child2 = document.getElementById('childDiv2');
+        // var pa2 = document.getElementById('about-b2');
+        //   child2.parentNode.insertBefore(text2, child2);
+          document.getElementById('num-percent2').innerHTML = 'With effective treatment:  ' +12+'%';
 
-          var text3 = document.createTextNode(15+' trong '+number2+' người giống bạn sẽ ');
-          var child3 = document.getElementById('childDiv3');
-        var pa3 = document.getElementById('about-b3');
-          child3.parentNode.insertBefore(text3, child3);
-          document.getElementById('num-percent3').innerHTML = 15+'%';
+        //   var text3 = document.createTextNode(15+' trong '+number2+' người giống bạn sẽ ');
+        //   var child3 = document.getElementById('childDiv3');
+        // var pa3 = document.getElementById('about-b3');
+        //   child3.parentNode.insertBefore(text3, child3);
+          document.getElementById('num-percent3').innerHTML ='Without treatment:' +15+'%';
 
-          var text4 = document.createTextNode(17+' trong '+number2+' người giống bạn sẽ ');
-          var child4 = document.getElementById('childDiv4');
-        var pa4 = document.getElementById('about-b4');
-          child4.parentNode.insertBefore(text4, child4);
-          document.getElementById('num-percent4').innerHTML = 17+'%';
+        //   var text4 = document.createTextNode(17+' trong '+number2+' người giống bạn sẽ ');
+        //   var child4 = document.getElementById('childDiv4');
+        // var pa4 = document.getElementById('about-b4');
+        //   child4.parentNode.insertBefore(text4, child4);
+          document.getElementById('num-percent4').innerHTML ='With effective treatment:  ' + 17+'%';
 
           ////////////blue////////////////
   for(var i = 1; i <= 100; i++){
         var cach= i%5;
         if(i<=10){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "S/Chart/SVG/rect2.svg");
+      verti1.setAttribute("src", "SVG/rect2.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4").appendChild(verti2);
           };
@@ -288,13 +282,13 @@
         var cach= i%5;
         if(i<=12){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "S/Chart/SVG/rect2.svg");
+      verti1.setAttribute("src", "SVG/rect3.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_2").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_2").appendChild(verti2);
           };
@@ -310,13 +304,13 @@
         var cach= i%5;
         if(i<=15){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "S/Chart/SVG/rect3.svg");
+      verti1.setAttribute("src", "SVG/rect2.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_3").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_3").appendChild(verti2);
           };
@@ -332,13 +326,13 @@
         var cach= i%5;
         if(i<=17){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "S/Chart/SVG/rect3.svg");
+      verti1.setAttribute("src", "SVG/rect3.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_4").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
+      verti2.setAttribute("src", "SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_4").appendChild(verti2);
           };
@@ -370,14 +364,14 @@
          //document.write("<div class='square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
          var para = document.createElement("IMG");
-        para.setAttribute("src", "S/Chart/img/new_p.png");
+        para.setAttribute("src", "img/new_p.png");
         para.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para);
       } else {
          //document.write("<div class='empty-square'></div>");
          //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
          var para2 = document.createElement("IMG");
-        para2.setAttribute("src", "S/Chart/img/new_b.png");
+        para2.setAttribute("src", "img/new_b.png");
         para2.setAttribute("id","p-img");
         document.getElementById("chartContainer3").appendChild(para2);      
       }
@@ -404,12 +398,12 @@
      }
       if (i < risk5_hip_heal) {
          var para3_2 = document.createElement("IMG");
-        para3_2.setAttribute("src", "S/Chart/img/new_p.png");
+        para3_2.setAttribute("src", "img/new_p.png");
         para3_2.setAttribute("id","p1-img");
         document.getElementById("chartContainer3-1").appendChild(para3_2);
       } else {
          var para3_3 = document.createElement("IMG");
-         para3_3.setAttribute("src", "S/Chart/img/new_b.png");
+         para3_3.setAttribute("src", "img/new_b.png");
          para3_3.setAttribute("id","p1-img");
         document.getElementById("chartContainer3-1").appendChild(para3_3);
       }
@@ -437,12 +431,12 @@
     //  if (i < (100-tb5_any)) 
       if (i < tb5_any) {
          var para3_2_2 = document.createElement("IMG");
-        para3_2_2.setAttribute("src", "S/Chart/img/new_p.png");
+        para3_2_2.setAttribute("src", "img/new_p.png");
         para3_2_2.setAttribute("id","p2-img");
         document.getElementById("chartContainer3-2").appendChild(para3_2_2);
       } else {
          var para3_3_3 = document.createElement("IMG");
-         para3_3_3.setAttribute("src", "S/Chart/img/new_b.png");
+         para3_3_3.setAttribute("src", "img/new_b.png");
          para3_3_3.setAttribute("id","p2-img");
         document.getElementById("chartContainer3-2").appendChild(para3_3_3);
       }
@@ -467,12 +461,12 @@
      }
       if (i < tb5_any_heal) {
          var para3_2_2_2 = document.createElement("IMG");
-        para3_2_2_2.setAttribute("src", "S/Chart/img/new_p.png");
+        para3_2_2_2.setAttribute("src", "img/new_p.png");
         para3_2_2_2.setAttribute("id","p3-img");
         document.getElementById("chartContainer3-3").appendChild(para3_2_2_2);
       } else {
          var para3_3_3_3 = document.createElement("IMG");
-         para3_3_3_3.setAttribute("src", "S/Chart/img/new_b.png");
+         para3_3_3_3.setAttribute("src", "img/new_b.png");
          para3_3_3_3.setAttribute("id","p3-img");
         document.getElementById("chartContainer3-3").appendChild(para3_3_3_3);
       }

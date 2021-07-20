@@ -11,7 +11,6 @@
     <div class="tool-bone" id="tool-bone" style="height: auto;">
         <div class="bone-page-form">
             <h2>Prognosis of fracture risk due to osteoporosis</h2>
-            <!-- <h3>Fill in the following information to estimate your fracture risk</h3> -->
             <div class="panel-light">
                 <div class="form-group">
                     <h3>Full Name (optional)</h3>
@@ -73,6 +72,108 @@
                             <input class="predict-input predict-input-5" type="text" name="weight" id="weight">
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Fractures since the age of 50</h3>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="zero" name="frac-50" value="0">
+                            <label class="radios_label" for="zero">                               
+                                0                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="one" name="frac-50" value="1">
+                            <label class="radios_label" for="one">                               
+                                1                              
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="two" name="frac-50" value="2">
+                            <label class="radios_label" for="two">                               
+                                2                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="three" name="frac-50" value="3">
+                            <label class="radios_label" for="three">                               
+                                3 or more                              
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Falls over last 12 months</h3>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="fzero" name="fall-12" value="0">
+                            <label class="radios_label" for="fzero">                               
+                                0                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="fone" name="fall-12" value="1">
+                            <label class="radios_label" for="fone">                               
+                                1                              
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="ftwo" name="fall-12" value="2">
+                            <label class="radios_label" for="ftwo">                               
+                                2                               
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="fthree" name="fall-12" value="3">
+                            <label class="radios_label" for="fthree">                               
+                                3 or more                              
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>T-scores</h3>
+                    <p>
+                        T-score is the BMD value compared with young normal people of the same sex and general ethnicity. 
+                        These are usually listed prominently on the BMD report.
+                        You must enter the + or - in front of the value as shown.
+                    </p>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="T-score" id="T-score" min="-5" max="4">
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+            <div class="panel-light">
+                <div class="form-group">
+                    <h3>Actual BMD</h3>
+                    <div class="name-input">
+                        <div class="form-group">
+                            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="BMD" id="BMD" min="0" max="10">
+                        </div>
+                    </div>
+                    <h3>Densitometer</h3>
+                    <div class="radios">
+                        <div class="radios-item">
+                            <input type="radio" id="DXA_GE" name="Densitometer" value="DXA_GE" checked>
+                            <label class="radios_label" for="DXA_GE">                               
+                                by DXA GE Lunar                                
+                            </label>
+                        </div>
+                        <div class="radios-item">
+                            <input type="radio" id="DXA_Holo" name="Densitometer" value="DXA_Holo">
+                            <label class="radios_label" for="DXA_Holo">                               
+                                by DXA Hologic                               
+                            </label>
+                        </div>
+                    </div>                  
                 </div>
             </div>
             <div class="panel-light">
@@ -192,8 +293,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
+        <button class="btn1" id="calculate-btn">
+            Get your results
+        </button>
     </div>
 </body>
 </html>
