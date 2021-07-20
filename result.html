@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="predict.css">
+    <link rel="stylesheet" href="/S/Chart/style.css">
     <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <title>Document</title>
 </head>
@@ -20,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn" onclick="Result()">
+                <button class="btn1" onclick="Result()">
                     Get
                 </button>
             </div>
@@ -101,10 +102,139 @@
                 </div>
                 </div>
         </div>
+        <div class="panel-light">
+            <div id="tm-gallery-page-hình" class="tm-gallery-page row1 hidden2">
+                <!-- <div class="col-xs-12"> -->
+                  <!-- <div> -->
+                  <!-- <div class="row1" style="clear:both;"> -->
+                    <!-- <div> -->
+                <!-- <div id="chartContainer3" class="col-sm-7"> -->
+                  <div class="form-horizontal">
+                    <div class="btn-hip-any">
+                      <div class="btn-hp">
+                        <div role="group" class="btn-group">
+                          <button class="btn btn-default btn-sm custom active" type="button" id="hip" onclick="hip()">Gãy xương hông</button>
+                          <button class="btn btn-default btn-sm custom" type="button" id="any" onclick="any()">Gãy xương khác</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12" style="margin-bottom: 50px;font-size: 18px;">
+                    Nguy cơ 100 người có tình trạng các yếu tố nguy cơ giống bạn sẽ bị gãy xương hông/bất kỳ loại xương trong vòng 5 năm tới nếu<span>
+                      <div role="group" class="btn-group btn-5">
+                        <button class="btn btn-default btn-sm custom active" type="button" id="five" onclick="fiveyears_hip()">Không điều trị</button>
+                        <button class="btn btn-default btn-sm custom" type="button" id="ten" onclick="tenyears_hip()">Điều trị</button>
+                        <button class="btn btn-default btn-sm custom active hidden" type="button" id="five2" onclick="fiveyears_any()">Không điều trị</button>
+                        <button class="btn btn-default btn-sm custom hidden" type="button" id="ten2" onclick="tenyears_any()">Điều trị</button>
+                      </div>      
+                    </span>
+                  </div>
+                  <div style="display: flex;justify-content: space-between; width: 1000px; margin-bottom: 0px;">
+                    <div id="chartContainer3">
+                      <div class="hip-number">
+                        <div class="black" id="black-hip-number"></div>
+                        <span>
+                          will not
+                          <br>
+                          break a bone
+                        </span>
+                      </div>
+                      <div class="hip-number-purple">
+                  <div class="purple" id="purple-hip-number"></div>
+                        <span>
+                          will
+                          <br>
+                          break a bone
+                        </span>
+                      </div>
+                    </div>
+                    <div style="width:400px">
+      
+                    </div>
+                    <div id="chartContainer3-1" class="hidden">
+                      <div class="hip-number-heal">
+                        <div class="black" id="black-hip-number-heal"></div>
+                        <span>
+                          will not
+                          <br>
+                          break a bone
+                        </span>
+                      </div>
+                      <div class="hip-number-heal-purple">
+                  <div class="purple" id="purple-hip-heal-number"></div>
+                        <span>
+                          will
+                          <br>
+                          break a bone
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div id="chartContainer3">
+                </div>
+                <div id="chartContainer3-1" class="hidden"></div> -->
+                <div style="display: flex;justify-content: space-between; width: 1000px; margin-bottom: 40px;">
+                  <div id="chartContainer3-2" class="hidden">
+                    <div class="hip-number">
+                      <div class="black" id="black-any-number"></div>
+                      <span>
+                        will not
+                        <br>
+                        break a bone
+                      </span>
+                    </div>
+                    <div class="hip-number-purple">
+                <div class="purple" id="purple-any-number"></div>
+                      <span>
+                        will
+                        <br>
+                        break a bone
+                      </span>
+                    </div>
+                  </div> 
+                  <div style="width:400px">
+      
+                  </div>
+                  <div id="chartContainer3-3" class="hidden">
+                    <div class="hip-number-heal">
+                      <div class="black" id="black-any-heal-number"></div>
+                      <span>
+                        will not
+                        <br>
+                        break a bone
+                      </span>
+                    </div>
+                    <div class="hip-number-heal-purple">
+                <div class="purple" id="purple-any-heal-number"></div>
+                      <span>
+                        will
+                        <br>
+                        break a bone
+                      </span>
+                    </div>
+                  </div> 
+                </div>
+                <!-- <div id="chartContainer3-2" class="hidden"></div> 
+                <div id="chartContainer3-3" class="hidden"></div>          -->
+                <div class="col-md-6 offset-7 info-icon" id="info1" style="padding-top:35px; position: absolute; margin-top: -400px;">          
+                  <img src="img/new_b.png" alt="" style="width: 30px;"> Số người không gãy xương
+                  <br>
+                  <img src="img/new_p.png" alt="" style="width: 30px;"> Số người gãy xương hông
+                </div>
+                <div class="col-md-6 offset-7 info-icon2 hidden" id="info2" style="padding-top:35px; position: absolute; margin-top: -400px;">          
+                  <img src="img/new_b.png" alt="" style="width: 30px;"> Số người không gãy xương
+                  <br>
+                  <img src="img/new_p.png" alt="" style="width: 30px;"> Số người gãy bất kì xương nào
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+               </div>
+        </div>
     </div>
     <script>
         function Result(){
             document.getElementById("tm-gallery-page-vạch").classList.remove("hidden");
+            document.getElementById("tm-gallery-page-hình").classList.remove("hidden2");
 
             var number2 = 100;
     var text = document.createTextNode(10+' trong '+number2+' người giống bạn sẽ ');
@@ -136,13 +266,13 @@
         var cach= i%5;
         if(i<=10){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "SVG/rect2.svg");
+      verti1.setAttribute("src", "S/Chart/SVG/rect2.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4").appendChild(verti2);
           };
@@ -158,13 +288,13 @@
         var cach= i%5;
         if(i<=12){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "SVG/rect2.svg");
+      verti1.setAttribute("src", "S/Chart/SVG/rect2.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_2").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_2").appendChild(verti2);
           };
@@ -180,13 +310,13 @@
         var cach= i%5;
         if(i<=15){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "SVG/rect3.svg");
+      verti1.setAttribute("src", "S/Chart/SVG/rect3.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_3").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_3").appendChild(verti2);
           };
@@ -202,13 +332,13 @@
         var cach= i%5;
         if(i<=17){
           var verti1 = document.createElement("IMG");
-      verti1.setAttribute("src", "SVG/rect3.svg");
+      verti1.setAttribute("src", "S/Chart/SVG/rect3.svg");
       verti1.setAttribute("id","v-img");
       document.getElementById("chartContainer4_4").appendChild(verti1);
           }
           else{
           var verti2 = document.createElement("IMG");
-      verti2.setAttribute("src", "SVG/rect.svg");
+      verti2.setAttribute("src", "S/Chart/SVG/rect.svg");
       verti2.setAttribute("id","v-img");
       document.getElementById("chartContainer4_4").appendChild(verti2);
           };
@@ -219,7 +349,137 @@
           document.getElementById("chartContainer4_4").appendChild(sp);
           }
     }
+
+    // var broke = 100 - risk5_hip;
+    //     document.getElementById("black-hip-number").innerHTML = broke;
+    //     document.getElementById("purple-hip-number").innerHTML = risk5_hip;
+        var tb5_hip = Math.round(5,1);
+        var t = document.getElementById("p-img");
+            if(t == null){
+        // var y3 = document.getElementById("name").value;
+    for( var i = 0; i < 10*10; i++) {
+     var row = i / 10;
+     var col = i % 10;
+     if(col == 0 && row > 0) {
+        //document.write("<div style='clear:both'></div>");
+        var para3 = document.createElement("DIV");
+       para3.setAttribute("style","clear:both");
+       document.getElementById("chartContainer3").appendChild(para3);
+     }
+      if (i < tb5_hip) {
+         //document.write("<div class='square'></div>");
+         //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
+         var para = document.createElement("IMG");
+        para.setAttribute("src", "S/Chart/img/new_p.png");
+        para.setAttribute("id","p-img");
+        document.getElementById("chartContainer3").appendChild(para);
+      } else {
+         //document.write("<div class='empty-square'></div>");
+         //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
+         var para2 = document.createElement("IMG");
+        para2.setAttribute("src", "S/Chart/img/new_b.png");
+        para2.setAttribute("id","p-img");
+        document.getElementById("chartContainer3").appendChild(para2);      
+      }
+   }   
+ }
+ 
+      /////////////////////////////////
+      ///////////////chart3.1//////////
+    //   var broke2 = 100 - risk5_hip_heal;
+    //     document.getElementById("black-hip-number-heal").innerHTML = broke2;
+    //     document.getElementById("purple-hip-heal-number").innerHTML = risk5_hip_heal;
+
+      var tb5_hip_heal = Math.round(10,1);
+      var t1 = document.getElementById("p1-img");
+            if(t1 == null){
+        // var y3 = document.getElementById("name").value;
+    for( var i = 0; i < 10*10; i++) {
+     var row1 = i / 10;
+     var col1 = i % 10;
+     if(col1 == 0 && row1 > 0) {
+        var para3_1 = document.createElement("DIV");
+       para3_1.setAttribute("style","clear:both");
+       document.getElementById("chartContainer3-1").appendChild(para3_1);
+     }
+      if (i < risk5_hip_heal) {
+         var para3_2 = document.createElement("IMG");
+        para3_2.setAttribute("src", "S/Chart/img/new_p.png");
+        para3_2.setAttribute("id","p1-img");
+        document.getElementById("chartContainer3-1").appendChild(para3_2);
+      } else {
+         var para3_3 = document.createElement("IMG");
+         para3_3.setAttribute("src", "S/Chart/img/new_b.png");
+         para3_3.setAttribute("id","p1-img");
+        document.getElementById("chartContainer3-1").appendChild(para3_3);
+      }
+    }
+  }
+
+  //var tb10 = Math.round((risk10_hip + risk10_any)/2);
+  ////////////chart3.2/////////////////////////////
+//   var broke3 = 100 - risk5_any;
+//         document.getElementById("black-any-number").innerHTML = broke3;
+//         document.getElementById("purple-any-number").innerHTML = risk5_any;
+
+  var tb5_any = Math.round(12,1);
+      var t2 = document.getElementById("p2-img");
+            if(t2 == null){
+        // var y3 = document.getElementById("name").value;
+    for( var i = 0; i < 10*10; i++) {
+     var row2 = i / 10;
+     var col2 = i % 10;
+     if(col2 == 0 && row2 > 0) {
+        var para3_1_1 = document.createElement("DIV");
+       para3_1_1.setAttribute("style","clear:both");
+       document.getElementById("chartContainer3-2").appendChild(para3_1_1);
+     }
+    //  if (i < (100-tb5_any)) 
+      if (i < tb5_any) {
+         var para3_2_2 = document.createElement("IMG");
+        para3_2_2.setAttribute("src", "S/Chart/img/new_p.png");
+        para3_2_2.setAttribute("id","p2-img");
+        document.getElementById("chartContainer3-2").appendChild(para3_2_2);
+      } else {
+         var para3_3_3 = document.createElement("IMG");
+         para3_3_3.setAttribute("src", "S/Chart/img/new_b.png");
+         para3_3_3.setAttribute("id","p2-img");
+        document.getElementById("chartContainer3-2").appendChild(para3_3_3);
+      }
+    }
+  }
+
+  ///////////////////////chart3.3/////////////////////////////
+//   var broke4 = 100 - risk5_any_heal;
+//         document.getElementById("black-any-heal-number").innerHTML = broke4;
+//         document.getElementById("purple-any-heal-number").innerHTML = risk5_any_heal;
+
+  var tb5_any_heal = Math.round(15,1);
+      var t3 = document.getElementById("p3-img");
+            if(t3 == null){
+    for( var i = 0; i < 10*10; i++) {
+     var row3 = i / 10;
+     var col3 = i % 10;
+     if(col3 == 0 && row3 > 0) {
+        var para3_1_1_1 = document.createElement("DIV");
+       para3_1_1_1.setAttribute("style","clear:both");
+       document.getElementById("chartContainer3-3").appendChild(para3_1_1_1);
+     }
+      if (i < tb5_any_heal) {
+         var para3_2_2_2 = document.createElement("IMG");
+        para3_2_2_2.setAttribute("src", "S/Chart/img/new_p.png");
+        para3_2_2_2.setAttribute("id","p3-img");
+        document.getElementById("chartContainer3-3").appendChild(para3_2_2_2);
+      } else {
+         var para3_3_3_3 = document.createElement("IMG");
+         para3_3_3_3.setAttribute("src", "S/Chart/img/new_b.png");
+         para3_3_3_3.setAttribute("id","p3-img");
+        document.getElementById("chartContainer3-3").appendChild(para3_3_3_3);
+      }
+    }
+  }
         }
+
     </script>
 </body>
 </html>
