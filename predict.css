@@ -177,3 +177,9 @@ input[type=number]::-webkit-inner-spin-button {
     color: #FFE611;
     border-bottom: 0.125em #FFE611 solid;
 }
+.btn-line{
+    padding: 30px !important;
+}
+.gr-center{
+    margin-left: 30%;
+}
