@@ -1,302 +1,917 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="predict.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="predict.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+  <title>Document</title>
 </head>
+
 <body>
-    <div class="tool-bone" id="tool-bone" style="height: auto;">
-        <div class="bone-page-form">
-            <h2>Prognosis of fracture risk due to osteoporosis</h2>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Full Name (optional)</h3>
-                    <div class="name-input">
-                        <div class="form-group">
-                            <input class="predict-input" type="text" style="width:12.75em;">
-                        </div>
-                    </div>
-                    <h3>Age</h3>
-                    <div class="name-input">
-                        <div class="form-group">
-                            <input class="predict-input" type="text" >
-                        </div>
-                    </div>
-                </div>
+    <nav class="nav-menu">
+        <div class="wrapper">
+          <div class="logo">
+            <a href="#">
+                <img src="img/garvan-logo.svg" alt="">
+            </a>
             </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Gender</h3>
-                    <p>
-                        Your sex may affect your heart age, so select your sex at birth for this test.
-                         You can discuss the result with your GP for a more personal interpretation.
-                    </p>
-                    <div class="radios">
-                        <div class="radios-item">
-                            <input type="radio" id="men" name="gender" value="men">
-                            <label class="radios_label" for="men">                               
-                                Male                                
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="wo" name="gender" value="wo">
-                            <label class="radios_label" for="wo">                               
-                                Female                                
-                            </label>
-                        </div>
+          <input type="radio" name="slider" id="menu-btn" onclick="bar()">
+          <input type="radio" name="slider" id="close-btn" onclick="close2()">
+          <div class="section-nav">
+            <ul class="nav-links" id="nav-link">
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                <li><a href="home.html" class="bg-color">Home</a></li>
+                <li>
+                  <a href="introduce.html" class="desktop-item">About</a>
+                  <input type="checkbox" id="showMega">
+                  <label for="showMega" class="mobile-item">About</label>
+                  <div class="mega-box">
+                    <div class="content">
+                      <div class="row">
+                        <img src="img/research.svg" alt="">
+                      </div>
+                      <div class="row">
+                        <header>About iPredict</header>
+                        <ul class="mega-links">
+                          <li><a href="#">Who is for?</a></li>
+                          <li><a href="#">How iPredict works</a></li>
+                          <li><a href="#">Who build iPredict</a></li>
+                          <!-- <li><a href="#">Custom logo</a></li> -->
+                        </ul>
+                      </div>
+                      <div class="row">
+                        <header>Technical</header>
+                        <ul class="mega-links">
+                          <li><a href="#">Development History</a></li>
+                          <li><a href="#">Publications</a></li>
+                          <li><a href="#">FAQs</a></li>
+                          <!-- <li><a href="#">Web Marketing</a></li> -->
+                        </ul>
+                      </div>
+                      <div class="row">
+                        <header>Security services</header>
+                        <ul class="mega-links">
+                          <li><a href="#">Site Seal</a></li>
+                          <li><a href="#">VPS Hosting</a></li>
+                          <li><a href="#">Privacy Seal</a></li>
+                          <li><a href="#">Website design</a></li>
+                        </ul>
+                      </div>
                     </div>
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Height</h3>
-                    <p>Centimetres</p>
-                    <div class="name-input">
-                        <div class="form-group">
-                            <input class="predict-input predict-input-5" type="text" name="height" id="height" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Weight</h3>
-                    <p>
-                        Kilograms
-                    </p>
-                    <div class="name-input">
-                        <div class="form-group">
-                            <input class="predict-input predict-input-5" type="text" name="weight" id="weight">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Fractures since the age of 50</h3>
-                    <div class="radios">
-                        <div class="radios-item">
-                            <input type="radio" id="zero" name="frac-50" value="0">
-                            <label class="radios_label" for="zero">                               
-                                0                               
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="one" name="frac-50" value="1">
-                            <label class="radios_label" for="one">                               
-                                1                              
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="two" name="frac-50" value="2">
-                            <label class="radios_label" for="two">                               
-                                2                               
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="three" name="frac-50" value="3">
-                            <label class="radios_label" for="three">                               
-                                3 or more                              
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Falls over last 12 months</h3>
-                    <div class="radios">
-                        <div class="radios-item">
-                            <input type="radio" id="fzero" name="fall-12" value="0">
-                            <label class="radios_label" for="fzero">                               
-                                0                               
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="fone" name="fall-12" value="1">
-                            <label class="radios_label" for="fone">                               
-                                1                              
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="ftwo" name="fall-12" value="2">
-                            <label class="radios_label" for="ftwo">                               
-                                2                               
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="fthree" name="fall-12" value="3">
-                            <label class="radios_label" for="fthree">                               
-                                3 or more                              
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>T-scores</h3>
-                    <p>
-                        T-score is the BMD value compared with young normal people of the same sex and general ethnicity. 
-                        These are usually listed prominently on the BMD report.
-                        You must enter the + or - in front of the value as shown.
-                    </p>
-                    <div class="name-input">
-                        <div class="form-group">
-                            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="T-score" id="T-score" min="-5" max="4">
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Actual BMD</h3>
-                    <div class="name-input">
-                        <div class="form-group">
-                            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="BMD" id="BMD" min="0" max="10">
-                        </div>
-                    </div>
-                    <h3>Densitometer</h3>
-                    <div class="radios">
-                        <div class="radios-item">
-                            <input type="radio" id="DXA_GE" name="Densitometer" value="DXA_GE" checked>
-                            <label class="radios_label" for="DXA_GE">                               
-                                by DXA GE Lunar                                
-                            </label>
-                        </div>
-                        <div class="radios-item">
-                            <input type="radio" id="DXA_Holo" name="Densitometer" value="DXA_Holo">
-                            <label class="radios_label" for="DXA_Holo">                               
-                                by DXA Hologic                               
-                            </label>
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Diseases</h3>
-                    <div class="" style="display: flex; justify-content: space-between;">
-                        <div class="disea">
-                            <p>
-                                Cardiovascular disease
-                            </p>
-                            <p class="mtop-40">
-                                Cancer
-                            </p>
-                            <p class="mtop-40">
-                                Type 2 diabetes
-                            </p>
-                            <p class="mtop-40">
-                                Neuromuscular
-                            </p>
-                            <p class="mtop-40">
-                                Rheumatoid arthritis
-                            </p>
-                            <p class="mtop-40">
-                                COPD
-                            </p>
-                        </div>
-                        <div class="radios">
-                            <div class="radios-item">
-                                <input type="radio" id="no1" name="Cardiovascular" value="no1">
-                                <label class="radios_label" for="no1">                               
-                                    No                               
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="no2" name="cancer" value="no2">
-                                <label class="radios_label" for="no2">                               
-                                    No                               
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="no3" name="Type_2_diabetes" value="no3">
-                                <label class="radios_label" for="no3">                               
-                                    No                               
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="no4" name="Neuromuscular" value="no4">
-                                <label class="radios_label" for="no4">                               
-                                    No                               
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="no5" name="Rheumatoid_arthritis" value="no5">
-                                <label class="radios_label" for="no5">                               
-                                    No                               
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="no6" name="COPD" value="no6">
-                                <label class="radios_label" for="no6">                               
-                                    No                               
-                                </label>
-                            </div>
-                        </div>
-                        <div class="radios">
-                            <div class="radios-item">
-                                <input type="radio" id="yes1" name="Cardiovascular" value="yes1">
-                                <label class="radios_label" for="yes1">                               
-                                    Yes                               
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="yes2" name="cancer" value="yes2">
-                                <label class="radios_label" for="yes2">                               
-                                    Yes                             
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="yes3" name="Type_2_diabetes" value="yes3">
-                                <label class="radios_label" for="yes3">                               
-                                    Yes                     
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="yes4" name="Neuromuscular" value="yes4">
-                                <label class="radios_label" for="yes4">                               
-                                    Yes                         
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="yes5" name="Rheumatoid_arthritis" value="yes5">
-                                <label class="radios_label" for="yes5">                               
-                                    Yes                           
-                                </label>
-                            </div>
-                            <div class="radios-item">
-                                <input type="radio" id="yes6" name="COPD" value="yes6">
-                                <label class="radios_label" for="yes6">                               
-                                    Yes                               
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-light">
-                <div class="form-group">
-                    <h3>Disclaimer</h3>
-                    <p>
-                        The results produced by our calculator should serve as a guide only.
-                         If concerned about your fracture risk, it is also important to consult your doctor or a bone specialist.
-                    </p>
-                    <div class="radios">
-                        <div class="radios-item">
-                            <input type="checkbox" name="check" id="check">
-                            <label for="check" style="margin-left: 10px; position: absolute;">I have read and understand the disclaimer</label>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                </li>
+                <li><a href="index.html" class="bg-color">Predict</a></li>
+                <li><a href="contact.html" class="bg-color">Feedback</a></li>
+              </ul>
+          </div>
+          <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
-        <button class="btn1" id="calculate-btn">
-            Get your results
-        </button>
+      </nav>
+  <div class="tool-bone" id="tool-bone" style="height: auto;">
+    <div class="bone-page-form" id="bone-page-form">
+      <h2>Prognosis of fracture risk due to osteoporosis</h2>
+      <div class="panel-light">
+        <div class="form-group">
+          <div class="name-input">
+            <div class="form-group">
+              <h3 class="lb-input">Full Name (optional)</h3>
+              <input class="predict-input" type="text" style="width:12.75em;">
+            </div>
+          </div>
+          <div class="name-input">
+            <div class="form-group">
+              <h3 class="lb-input age-lb" style="margin-left: 200px;">Age</h3>
+              <input class="predict-input" type="text" id="age" name="age">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <h3 class="lb-input" style="margin-left: 160px;">Gender</h3c>
+          <input type="radio" id="men" name="gender" value="men">
+          <label class="radios_label" for="men">
+            Male
+          </label>
+          <input type="radio" id="wo" name="gender" value="wo">
+          <label class="radios_label" for="wo">
+            Female
+          </label>       
+        </div>
+        <div class="form-group">
+          <h3 class="lb-input">Height (Centimetres)</h3>
+          <input class="predict-input predict-input-5" type="text" name="height" id="height">
+        </div>
+        <div class="form-group">
+          <h3 class="lb-input" style="margin-right: 35px;">Weight (Kilograms)</h3>
+          <input class="predict-input predict-input-5" type="text" name="weight" id="weight">
+        </div>
+      </div>
+      <div class="panel-light">
+        <div class="form-group">
+          <h3 class="lb-input">Fractures since the age of 50</h3>
+          <select name="Fra-50" id="Fra-50" class="predict-input" style="width:12.75em;">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 or more</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <h3 class="lb-input" style="margin-left: 50px;">Falls over last 12 months</h3>
+          <select name="Fall-12" id="Fall-12" class="predict-input" style="width:12.75em;">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 or more</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <h3 class="lb-input" style="margin-left: 255px;">T-scores</h3>
+            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="T-score" id="T-score"
+            min="-5" max="4">
+            <p>
+              T-score is the BMD value compared with young normal people of the same sex and general ethnicity.
+              These are usually listed prominently on the BMD report.
+              You must enter the + or - in front of the value as shown.
+            </p>
+          </div>
+          <div class="form-group">
+            <h3 class="lb-input" style="margin-left: 220px;">Actual BMD</h3>
+            <input class="predict-input predict-input-5" type="number" autocomplete="off" name="BMD" id="BMD" min="0"
+            max="10">
+           <div class="form-group">
+              <h3 class="lb-input">Densitometer</h3>
+              <input type="radio" id="DXA_GE" name="Densitometer" value="DXA_GE" checked>
+                  <label class="radios_label" for="DXA_GE">
+                    by DXA GE Lunar
+                  </label>
+                  <input type="radio" id="DXA_Holo" name="Densitometer" value="DXA_Holo">
+                  <label class="radios_label" for="DXA_Holo">
+                    by DXA Hologic
+                  </label>     
+           </div>
+          </div>
+      </div>
+
+      <div class="panel-light">
+        <div class="form-group">
+          <h3>Diseases</h3>
+          <div class="" style="display: flex; justify-content: space-between;">
+            <div class="disea">
+              <p>
+                Cardiovascular disease
+              </p>
+              <p class="mtop-40">
+                Cancer
+              </p>
+              <p class="mtop-40">
+                Type 2 diabetes
+              </p>
+              <p class="mtop-40">
+                Neuromuscular
+              </p>
+              <p class="mtop-40">
+                Rheumatoid arthritis
+              </p>
+              <p class="mtop-40">
+                COPD
+              </p>
+            </div>
+            <div class="radios">
+              <div class="radios-item">
+                <input type="radio" id="no1" name="Cardiovascular" value="no1">
+                <label class="radios_label" for="no1">
+                  No
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="no2" name="cancer" value="no2">
+                <label class="radios_label" for="no2">
+                  No
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="no3" name="Type_2_diabetes" value="no3">
+                <label class="radios_label" for="no3">
+                  No
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="no4" name="Neuromuscular" value="no4">
+                <label class="radios_label" for="no4">
+                  No
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="no5" name="Rheumatoid_arthritis" value="no5">
+                <label class="radios_label" for="no5">
+                  No
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="no6" name="COPD" value="no6">
+                <label class="radios_label" for="no6">
+                  No
+                </label>
+              </div>
+            </div>
+            <div class="radios">
+              <div class="radios-item">
+                <input type="radio" id="yes1" name="Cardiovascular" value="yes1">
+                <label class="radios_label" for="yes1">
+                  Yes
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="yes2" name="cancer" value="yes2">
+                <label class="radios_label" for="yes2">
+                  Yes
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="yes3" name="Type_2_diabetes" value="yes3">
+                <label class="radios_label" for="yes3">
+                  Yes
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="yes4" name="Neuromuscular" value="yes4">
+                <label class="radios_label" for="yes4">
+                  Yes
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="yes5" name="Rheumatoid_arthritis" value="yes5">
+                <label class="radios_label" for="yes5">
+                  Yes
+                </label>
+              </div>
+              <div class="radios-item">
+                <input type="radio" id="yes6" name="COPD" value="yes6">
+                <label class="radios_label" for="yes6">
+                  Yes
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-light">
+        <div class="form-group">
+          <h3>Disclaimer</h3>
+          <p>
+            The results produced by our calculator should serve as a guide only.
+            If concerned about your fracture risk, it is also important to consult your doctor or a bone specialist.
+          </p>
+          <div class="radios">
+            <div class="radios-item">
+              <input type="checkbox" name="disclaimer" id="disclaimer">
+              <label for="check" style="margin-left: 10px; position: absolute;">I have read and understand the
+                disclaimer</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-lgith">
+        <div class="warning hidden">
+            <div id="text-err">
+              Vui lòng thực hiện các sửa đổi được liệt kê bên dưới trước khi gửi lại biểu mẫu
+              <ul>
+                <li id="age-err">
+                  Vui lòng chọn độ tuổi của bạn 
+                </li>
+                <li id="T-scr-err">
+                  Vui lòng nhập T-score hợp lệ từ 4 đến -5
+                </li>
+                <li id="check-err">
+                  Vui lòng đọc và đồng ý với tuyên bố từ chối trách nhiệm nếu bạn muốn tiếp tục
+                </li>
+                <li id="bmd-err">
+                  Vui lòng nhập giá trị actual BMD hợp lệ từ 0.1 đến 2
+                </li>
+                <li id="wei-err">
+                  Vui lòng nhập trọng lượng hợp lệ từ 10 đến 150 kg
+                </li>
+                <li id="T-scr-or-bmd">
+                  Vui lòng nhập T-score HOẶC actual BMD
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <button class="btn1" id="calculate-btn" onclick="Result()">
+        Get your results
+      </button>
     </div>
+    <div class="result-page" id="result-page">
+      <div id="first-chart" class="panel-light hidden">
+        <div id="tm-gallery-page-vạch" class="tm-gallery-page hidden">
+          <!-- <div id="chartContainer2"></div> -->
+          <div class="chart4">
+            <p>Nguy cơ gãy xương do loãng xương trong vòng 5 và 10 năm tới.</p>
+            <div class="first-chart">
+              <!-- <span>Nếu không điều trị loãng xương,
+                    <span id="about-b1">có khoảng </span>
+                    <div id="childDiv" class="hidden"></div>
+                    <b class="b1">gãy bất kỳ loại xương nào</b> trong 5 năm tới.
+                  </span> -->
+              <span class="row-title">
+                Your 5-year risk of any fracture
+              </span>
+              <div class="row">
+                <div class="col-3 percent col-3-w">
+                  <span id="num-percent"></span>
+                </div>
+                <div class="col-8 per-chart" id="chartContainer4">
+                </div>
+              </div>
+            </div>
+            <div class="second-chart">
+              <!-- <span>
+                    Nếu điều trị loãng xương,
+                    <span id="about-b2">có khoảng </span>
+                    <div id="childDiv2" class="hidden"></div>
+                    <b class="b2">gãy bất kỳ loại xương nào</b> trong 5 năm tới.
+                  </span> -->
+              <div class="row">
+                <div class="col-3 percent col-3-w">
+                  <span id="num-percent2"></span>
+                </div>
+                <div class="col-8 per-chart" id="chartContainer4_2"></div>
+              </div>
+            </div>
+            <div class="third-chart">
+              <span class="row-title" style="margin-top: 10px; display: block;">
+                Your 5-year risk of hip fracture
+              </span>
+              <div class="row">
+                <div class="col-3 percent col-3-w">
+                  <span id="num-percent3"></span>
+                </div>
+                <div class="col-8 per-chart" id="chartContainer4_3"></div>
+              </div>
+            </div>
+            <div class="fourth-chart">
+              <div class="row">
+                <div class="col-3 percent col-3-w">
+                  <span id="num-percent4"></span>
+                </div>
+                <div class="col-8 per-chart" id="chartContainer4_4"></div>
+              </div>
+            </div>
+            <div class="first-note">
+              <svg width="14" height="14">
+                <circle cx="7" cy="7" r="7" fill="#2222AA" opacity="1" stroke="none" stroke-width="1"></circle>
+              </svg>
+              Gãy bất kỳ loại xương nào (any osteoporotic fracture)
+            </div>
+            <div class="second-note">
+              <svg width="14" height="14">
+                <circle cx="7" cy="7" r="7" fill="#660044" opacity="1" stroke="none" stroke-width="1"></circle>
+              </svg>
+              Gãy xương hông (hip fracture)
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="second-chart" class="panel-light hidden">
+        <div id="tm-gallery-page-hình" class="tm-gallery-page row1 hidden2">
+          <!-- <div class="col-xs-12"> -->
+          <!-- <div> -->
+          <!-- <div class="row1" style="clear:both;"> -->
+          <!-- <div> -->
+          <!-- <div id="chartContainer3" class="col-sm-7"> -->
+          <div class="form-horizontal">
+            <div class="btn-hip-any">
+              <div class="btn-hp">
+                <div role="group" class="btn-group">
+                  <button class="btn btn-default btn-sm custom active" type="button" id="hip" onclick="hip()">Gãy xương
+                    hông</button>
+                  <button class="btn btn-default btn-sm custom" type="button" id="any" onclick="any()">Gãy xương
+                    khác</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" style="margin-bottom: 50px;font-size: 18px;">
+            Nguy cơ 100 người có tình trạng các yếu tố nguy cơ giống bạn sẽ bị gãy xương hông/bất kỳ loại xương trong
+            vòng 5 năm tới nếu<span>
+              <div role="group" class="btn-group btn-5">
+                <button class="btn btn-default btn-sm custom active" type="button" id="five"
+                  onclick="fiveyears_hip()">Không điều trị</button>
+                <button class="btn btn-default btn-sm custom" type="button" id="ten" onclick="tenyears_hip()">Điều
+                  trị</button>
+                <button class="btn btn-default btn-sm custom active hidden" type="button" id="five2"
+                  onclick="fiveyears_any()">Không điều trị</button>
+                <button class="btn btn-default btn-sm custom hidden" type="button" id="ten2"
+                  onclick="tenyears_any()">Điều trị</button>
+              </div>
+            </span>
+          </div>
+          <div style="display: flex;justify-content: space-between; margin-bottom: 0px;">
+            <div id="chartContainer3">
+              <div class="hip-number">
+                <div class="black" id="black-hip-number"></div>
+                <span>
+                  will not
+                  <br>
+                  break a bone
+                </span>
+              </div>
+              <div class="hip-number-purple">
+                <div class="purple" id="purple-hip-number"></div>
+                <span>
+                  will
+                  <br>
+                  break a bone
+                </span>
+              </div>
+            </div>
+            <div id="hip-icon-info">
+              <img src="img/new_b.png" alt="" style="width: 30px;"> Số người không gãy xương
+              <br>
+              <img src="img/new_p.png" alt="" style="width: 30px;"> Số người gãy xương hông
+            </div>
+            <div id="chartContainer3-1" class="">
+              <div class="hip-number-heal">
+                <div class="black" id="black-hip-number-heal"></div>
+                <span>
+                  will not
+                  <br>
+                  break a bone
+                </span>
+              </div>
+              <div class="hip-number-heal-purple">
+                <div class="purple" id="purple-hip-heal-number"></div>
+                <span>
+                  will
+                  <br>
+                  break a bone
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="chartContainer3">
+                </div>
+                <div id="chartContainer3-1" class="hidden"></div> -->
+          <div style="display: flex;justify-content: space-between;">
+            <div id="chartContainer3-2" class="hidden">
+              <div class="hip-number">
+                <div class="black" id="black-any-number"></div>
+                <span>
+                  will not
+                  <br>
+                  break a bone
+                </span>
+              </div>
+              <div class="hip-number-purple">
+                <div class="purple" id="purple-any-number"></div>
+                <span>
+                  will
+                  <br>
+                  break a bone
+                </span>
+              </div>
+            </div>
+            <div id="any-icon-info" class="hidden">
+              <img src="img/new_b.png" alt="" style="width: 30px;"> Số người không gãy khác
+              <br>
+              <img src="img/new_p.png" alt="" style="width: 30px;"> Số người gãy xương khác
+            </div>
+            <div id="chartContainer3-3" class="hidden">
+              <div class="hip-number-heal">
+                <div class="black" id="black-any-heal-number"></div>
+                <span>
+                  will not
+                  <br>
+                  break a bone
+                </span>
+              </div>
+              <div class="hip-number-heal-purple">
+                <div class="purple" id="purple-any-heal-number"></div>
+                <span>
+                  will
+                  <br>
+                  break a bone
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+          <h3>Garvan
+            <span>institute of medical research</span>
+          </h3>
+          <p class="footer-links">
+            <a href="home.html">Home</a>
+            .
+            <a href="introduce.html">About</a>
+            .
+            <a href="index.html">iPredict</a>
+            .
+            <!-- <a href="ask.html">Hỏi đáp</a>
+            . -->
+            <a href="contact.html">Feedback</a>
+          </p>
+        </div>
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker-alt"></i>
+            <p>
+              <span>384 Victoria Street
+                Darlinghurst NSW 2010</span>
+                Australia
+            </p>
+          </div>
+          <div>
+            <i class="fa fa-phone-alt"></i>
+            <p>T. +61 (02) 9295 8100 <br>
+              F. +61 (02) 9295 8101
+            </p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="">foundation@garvan.org.au</a></p>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span>Follow us</span>
+            <!-- Dự án gồm 3 thành viên là sinh viên đến từ khoa Kỹ thuật - Công nghệ Trường Đại học Hà Tĩnh -->
+          </p>
+          <div class="footer-icons">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-youtube"></i></a>
+            <!-- <a href=""><i class="fab fa-github"></i></a> -->
+          </div>
+        </div>
+      </footer>
 </body>
+<script>
+    
+  function tenyears_hip() {
+    var element = document.getElementById("five");
+    element.classList.remove("active");
+    var element2 = document.getElementById("ten");
+    element2.classList.add("active");
+    // var chart3_1 = document.getElementById("chartContainer3");
+    // chart3_1.classList.add("hidden");
+    var chart3_2 = document.getElementById("chartContainer3-1");
+    chart3_2.classList.remove("hidden");
+  }
+  function fiveyears_hip() {
+    var element = document.getElementById("ten");
+    element.classList.remove("active");
+    var element2 = document.getElementById("five");
+    element2.classList.add("active");
+    var chart3_1 = document.getElementById("chartContainer3");
+    chart3_1.classList.remove("hidden");
+    var chart3_2 = document.getElementById("chartContainer3-1");
+    chart3_2.classList.add("hidden");
+  }
+  function hip() {
+    document.getElementById("hip-icon-info").classList.remove("hidden");
+    document.getElementById("any-icon-info").classList.add("hidden");
+
+    var element = document.getElementById("any");
+    element.classList.remove("active");
+    var element2 = document.getElementById("hip");
+    element2.classList.add("active");
+    var chart3_3 = document.getElementById("chartContainer3-2");
+    chart3_3.classList.add("hidden");
+    var chart3_4 = document.getElementById("chartContainer3-3");
+    chart3_4.classList.add("hidden");
+
+    document.getElementById("five").classList.remove("hidden");
+    document.getElementById("ten").classList.remove("hidden");
+
+    document.getElementById("five").classList.add("active");
+    document.getElementById("ten").classList.remove("active");
+
+    document.getElementById("five2").classList.add("hidden");
+    document.getElementById("ten2").classList.add("hidden");
+    var chart3_1 = document.getElementById("chartContainer3");
+    chart3_1.classList.remove("hidden");
+    var chart3_2 = document.getElementById("chartContainer3-1");
+    chart3_2.classList.add("hidden");
+  }
+  function any() {
+    document.getElementById("hip-icon-info").classList.add("hidden");
+    document.getElementById("any-icon-info").classList.remove("hidden");
+
+    var element = document.getElementById("hip");
+    element.classList.remove("active");
+    var element2 = document.getElementById("any");
+    element2.classList.add("active");
+
+    document.getElementById("five").classList.add("hidden");
+    document.getElementById("ten").classList.add("hidden");
+    document.getElementById("five2").classList.remove("hidden");
+    document.getElementById("ten2").classList.remove("hidden");
+
+    document.getElementById("five2").classList.add("active");
+    document.getElementById("ten2").classList.remove("active");
+
+    var chart3_1 = document.getElementById("chartContainer3");
+    chart3_1.classList.add("hidden");
+    var chart3_2 = document.getElementById("chartContainer3-1");
+    chart3_2.classList.add("hidden");
+
+    var chart3_3 = document.getElementById("chartContainer3-2");
+    chart3_3.classList.remove("hidden");
+    var chart3_4 = document.getElementById("chartContainer3-3");
+    chart3_4.classList.add("hidden");
+  }
+
+  function tenyears_any() {
+    var element = document.getElementById("five2");
+    element.classList.remove("active");
+    var element2 = document.getElementById("ten2");
+    element2.classList.add("active");
+    // var chart3_3 = document.getElementById("chartContainer3-2");
+    // chart3_3.classList.add("hidden");
+    var chart3_4 = document.getElementById("chartContainer3-3");
+    chart3_4.classList.remove("hidden");
+  }
+  function fiveyears_any() {
+    var element = document.getElementById("ten2");
+    element.classList.remove("active");
+    var element2 = document.getElementById("five2");
+    element2.classList.add("active");
+    var chart3_3 = document.getElementById("chartContainer3-2");
+    chart3_3.classList.remove("hidden");
+    var chart3_4 = document.getElementById("chartContainer3-3");
+    chart3_4.classList.add("hidden");
+  }
+  function Result() {
+
+    var age = document.getElementById("age").value;
+          var tscore = document.getElementById("T-score").value;
+          var wei = document.getElementById("weight").value;
+          var pfx = document.getElementById("Fra-50").value;
+          var fall = document.getElementById("Fall-12").value;
+          var checkbox = document.getElementById("disclaimer");
+          var actual = document.getElementById("BMD").value;
+
+    document.getElementById("tm-gallery-page-vạch").classList.remove("hidden");
+    document.getElementById("tm-gallery-page-hình").classList.remove("hidden2");
+
+    document.getElementById("first-chart").classList.remove("hidden");
+    document.getElementById("second-chart").classList.remove("hidden");
+
+    document.getElementById("result-page").classList.remove("hidden");
+    document.getElementById("bone-page-form").classList.add("hidden");
+    var number2 = 100;
+    // var text = document.createTextNode(10+' trong '+number2+' người giống bạn sẽ ');
+    //     var child = document.getElementById('childDiv');
+    //     var pa = document.getElementById('about-b1');
+    //       child.parentNode.insertBefore(text, child);
+    document.getElementById('num-percent').innerHTML = 'Without treatment:  ' + 10 + '%';
+
+    //   var text2 = document.createTextNode(12+' trong '+number2+' người giống bạn sẽ ');
+    //   var child2 = document.getElementById('childDiv2');
+    // var pa2 = document.getElementById('about-b2');
+    //   child2.parentNode.insertBefore(text2, child2);
+    document.getElementById('num-percent2').innerHTML = 'With effective treatment:  ' + 12 + '%';
+
+    //   var text3 = document.createTextNode(15+' trong '+number2+' người giống bạn sẽ ');
+    //   var child3 = document.getElementById('childDiv3');
+    // var pa3 = document.getElementById('about-b3');
+    //   child3.parentNode.insertBefore(text3, child3);
+    document.getElementById('num-percent3').innerHTML = 'Without treatment:' + 15 + '%';
+
+    //   var text4 = document.createTextNode(17+' trong '+number2+' người giống bạn sẽ ');
+    //   var child4 = document.getElementById('childDiv4');
+    // var pa4 = document.getElementById('about-b4');
+    //   child4.parentNode.insertBefore(text4, child4);
+    document.getElementById('num-percent4').innerHTML = 'With effective treatment:  ' + 17 + '%';
+
+    ////////////blue////////////////
+    for (var i = 1; i <= 100; i++) {
+      var cach = i % 5;
+      if (i <= 10) {
+        var verti1 = document.createElement("IMG");
+        verti1.setAttribute("src", "SVG/rect2.svg");
+        verti1.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4").appendChild(verti1);
+      }
+      else {
+        var verti2 = document.createElement("IMG");
+        verti2.setAttribute("src", "SVG/rect.svg");
+        verti2.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4").appendChild(verti2);
+      };
+
+      if (cach == 0) {
+        var sp = document.createTextNode(" ");
+        document.getElementById("chartContainer4").appendChild(sp);
+      }
+    }
+    ////////////purple////////////
+    for (var i = 1; i <= 100; i++) {
+      var cach = i % 5;
+      if (i <= 12) {
+        var verti1 = document.createElement("IMG");
+        verti1.setAttribute("src", "SVG/rect3.svg");
+        verti1.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4_2").appendChild(verti1);
+      }
+      else {
+        var verti2 = document.createElement("IMG");
+        verti2.setAttribute("src", "SVG/rect.svg");
+        verti2.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4_2").appendChild(verti2);
+      };
+
+      if (cach == 0) {
+        var sp = document.createTextNode(" ");
+        document.getElementById("chartContainer4_2").appendChild(sp);
+      }
+    }
+    /////////////////
+    for (var i = 1; i <= 100; i++) {
+      var cach = i % 5;
+      if (i <= 15) {
+        var verti1 = document.createElement("IMG");
+        verti1.setAttribute("src", "SVG/rect2.svg");
+        verti1.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4_3").appendChild(verti1);
+      }
+      else {
+        var verti2 = document.createElement("IMG");
+        verti2.setAttribute("src", "SVG/rect.svg");
+        verti2.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4_3").appendChild(verti2);
+      };
+
+      if (cach == 0) {
+        var sp = document.createTextNode(" ");
+        document.getElementById("chartContainer4_3").appendChild(sp);
+      }
+    }
+    /////////////pink///////////////
+    for (var i = 1; i <= 100; i++) {
+      var cach = i % 5;
+      if (i <= 17) {
+        var verti1 = document.createElement("IMG");
+        verti1.setAttribute("src", "SVG/rect3.svg");
+        verti1.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4_4").appendChild(verti1);
+      }
+      else {
+        var verti2 = document.createElement("IMG");
+        verti2.setAttribute("src", "SVG/rect.svg");
+        verti2.setAttribute("id", "v-img");
+        document.getElementById("chartContainer4_4").appendChild(verti2);
+      };
+
+      if (cach == 0) {
+        var sp = document.createTextNode(" ");
+        document.getElementById("chartContainer4_4").appendChild(sp);
+      }
+    }
+
+    var broke = 100 - 5;
+    document.getElementById("black-hip-number").innerHTML = broke;
+    document.getElementById("purple-hip-number").innerHTML = 5;
+    var tb5_hip = Math.round(5, 1);
+    var t = document.getElementById("p-img");
+    if (t == null) {
+      // var y3 = document.getElementById("name").value;
+      for (var i = 0; i < 10 * 10; i++) {
+        var row = i / 10;
+        var col = i % 10;
+        if (col == 0 && row > 0) {
+          //document.write("<div style='clear:both'></div>");
+          var para3 = document.createElement("DIV");
+          para3.setAttribute("style", "clear:both");
+          document.getElementById("chartContainer3").appendChild(para3);
+        }
+        if (i < tb5_hip) {
+          //document.write("<div class='square'></div>");
+          //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
+          var para = document.createElement("IMG");
+          para.setAttribute("src", "img/new_p.png");
+          para.setAttribute("id", "p-img");
+          document.getElementById("chartContainer3").appendChild(para);
+        } else {
+          //document.write("<div class='empty-square'></div>");
+          //document.getElementById("chartContainer3").innerHTML = "<img src='img/purple.png'>";
+          var para2 = document.createElement("IMG");
+          para2.setAttribute("src", "img/new_b.png");
+          para2.setAttribute("id", "p-img");
+          document.getElementById("chartContainer3").appendChild(para2);
+        }
+      }
+    }
+
+    /////////////////////////////////
+    ///////////////chart3.1//////////
+    var broke2 = 100 - 10;
+    document.getElementById("black-hip-number-heal").innerHTML = broke2;
+    document.getElementById("purple-hip-heal-number").innerHTML = 10;
+
+    var tb5_hip_heal = Math.round(10, 1);
+    var t1 = document.getElementById("p1-img");
+    if (t1 == null) {
+      // var y3 = document.getElementById("name").value;
+      for (var i = 0; i < 10 * 10; i++) {
+        var row1 = i / 10;
+        var col1 = i % 10;
+        if (col1 == 0 && row1 > 0) {
+          var para3_1 = document.createElement("DIV");
+          para3_1.setAttribute("style", "clear:both");
+          document.getElementById("chartContainer3-1").appendChild(para3_1);
+        }
+        if (i < tb5_hip_heal) {
+          var para3_2 = document.createElement("IMG");
+          para3_2.setAttribute("src", "img/new_p.png");
+          para3_2.setAttribute("id", "p1-img");
+          document.getElementById("chartContainer3-1").appendChild(para3_2);
+        } else {
+          var para3_3 = document.createElement("IMG");
+          para3_3.setAttribute("src", "img/new_b.png");
+          para3_3.setAttribute("id", "p1-img");
+          document.getElementById("chartContainer3-1").appendChild(para3_3);
+        }
+      }
+    }
+
+    //var tb10 = Math.round((risk10_hip + risk10_any)/2);
+    ////////////chart3.2/////////////////////////////
+    var broke3 = 100 - 12;
+    document.getElementById("black-any-number").innerHTML = broke3;
+    document.getElementById("purple-any-number").innerHTML = 12;
+
+    var tb5_any = Math.round(12, 1);
+    var t2 = document.getElementById("p2-img");
+    if (t2 == null) {
+      // var y3 = document.getElementById("name").value;
+      for (var i = 0; i < 10 * 10; i++) {
+        var row2 = i / 10;
+        var col2 = i % 10;
+        if (col2 == 0 && row2 > 0) {
+          var para3_1_1 = document.createElement("DIV");
+          para3_1_1.setAttribute("style", "clear:both");
+          document.getElementById("chartContainer3-2").appendChild(para3_1_1);
+        }
+        //  if (i < (100-tb5_any)) 
+        if (i < tb5_any) {
+          var para3_2_2 = document.createElement("IMG");
+          para3_2_2.setAttribute("src", "img/new_p.png");
+          para3_2_2.setAttribute("id", "p2-img");
+          document.getElementById("chartContainer3-2").appendChild(para3_2_2);
+        } else {
+          var para3_3_3 = document.createElement("IMG");
+          para3_3_3.setAttribute("src", "img/new_b.png");
+          para3_3_3.setAttribute("id", "p2-img");
+          document.getElementById("chartContainer3-2").appendChild(para3_3_3);
+        }
+      }
+    }
+
+    ///////////////////////chart3.3/////////////////////////////
+    var broke4 = 100 - 15;
+    document.getElementById("black-any-heal-number").innerHTML = broke4;
+    document.getElementById("purple-any-heal-number").innerHTML = 15;
+
+    var tb5_any_heal = Math.round(15, 1);
+    var t3 = document.getElementById("p3-img");
+    if (t3 == null) {
+      for (var i = 0; i < 10 * 10; i++) {
+        var row3 = i / 10;
+        var col3 = i % 10;
+        if (col3 == 0 && row3 > 0) {
+          var para3_1_1_1 = document.createElement("DIV");
+          para3_1_1_1.setAttribute("style", "clear:both");
+          document.getElementById("chartContainer3-3").appendChild(para3_1_1_1);
+        }
+        if (i < tb5_any_heal) {
+          var para3_2_2_2 = document.createElement("IMG");
+          para3_2_2_2.setAttribute("src", "img/new_p.png");
+          para3_2_2_2.setAttribute("id", "p3-img");
+          document.getElementById("chartContainer3-3").appendChild(para3_2_2_2);
+        } else {
+          var para3_3_3_3 = document.createElement("IMG");
+          para3_3_3_3.setAttribute("src", "img/new_b.png");
+          para3_3_3_3.setAttribute("id", "p3-img");
+          document.getElementById("chartContainer3-3").appendChild(para3_3_3_3);
+        }
+      }
+    }
+  }
+</script>
+
 </html>

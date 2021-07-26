@@ -28,12 +28,13 @@ input[type=number]::-webkit-inner-spin-button {
     width: 27% !important;
 }
 #tool-bone{
+    /* margin-top: 265px; */
     font-family: Roboto,sans-serif;
     font-size: 16px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
-    margin: 2em auto 2em auto;
+    margin: 5em auto 2em auto;
     text-align: left;
     background-color: #FFF;
     max-width: 930px;
