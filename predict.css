@@ -68,6 +68,7 @@ input[type=number]::-webkit-inner-spin-button {
     border: none;
     padding: 0;
     margin: 0;
+    margin-top: 20px;
 }
 
 #tool-bone .predict-input{
@@ -79,9 +80,13 @@ input[type=number]::-webkit-inner-spin-button {
     height: auto;
 }
 #tool-bone .name-input input{
-    display: block;
+    /* display: block; */
     margin: 0.4em 1em 0 0;
     padding: 0;
+}
+#tool-bone .lb-input{
+    display: inline;
+    margin-right: 15px;
 }
 #tool-bone p{
     margin: 0em 0em 1.25em 0em;
@@ -110,6 +115,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #tool-bone .radios_label {
     padding: 0;
+    margin: 0 50px;
 }
 #tool-bone input, #tool-bone optgroup, #tool-bone select, #tool-bone textarea {
     font-size: 100%;
@@ -181,5 +187,17 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 30px !important;
 }
 .gr-center{
-    margin-left: 30%;
+    margin-top: 20px;
+    margin-left: 25%;
+}
+.gr-center button{
+    border-radius: 30px;
+}
+.interpret{
+    margin-left: 25%;
+}
+.dtl-frac
+{
+   display: block !important;
+    margin-top: 20px;
 }
