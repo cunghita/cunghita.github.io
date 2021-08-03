@@ -1,0 +1,32 @@
+*
+{
+    box-sizing: border-box;
+}
+html body{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+body
+{
+     /* margin: 0;
+    padding: 0; */
+}
+.infomation-result
+{
+    padding: 0 40px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+.infomation-result h2{
+    text-align: center;
+}
+.infomation-result p{
+    font-size: 20px;
+}
+.infomation-result .value{
+    margin: 30px 0px;
+}
+.infomation-result .actual-bmd{
+    display: flex;
+    justify-content: space-between;
+}
