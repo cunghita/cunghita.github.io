@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="print.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="predict.css"> -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <title>Document</title>
 </head>
 <body>
@@ -53,6 +56,154 @@
                     it is also important to consult your doctor or a bone specialist.</span>
             </p>
         </div>
+        <div class="value">
+            <div id="first-chart" class="panel-light ">
+                <div id="tm-gallery-page-vạch" class="tm-gallery-page ">
+                  <div class="chart4">
+                    <p>Nguy cơ gãy xương do loãng xương trong vòng 5 năm tới.</p>
+                    <div class="first-chart">
+                      <span class="row-title">
+                        Your 5-year risk of any fracture
+                      </span>
+                      <div class="row">
+                        <div class="col-3 percent col-3-w">
+                          <span id="num-percent"></span>
+                        </div>
+                        <div class="col-8 per-chart" id="chartContainer4">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="second-chart">
+          
+                      <div class="row">
+                        <div class="col-3 percent col-3-w">
+                          <span id="num-percent2"></span>
+                        </div>
+                        <div class="col-8 per-chart" id="chartContainer4_2"></div>
+                      </div>
+                    </div>
+                    <div class="third-chart">
+                      <span class="row-title" style="margin-top: 10px; display: block;">
+                        Your 5-year risk of hip fracture
+                      </span>
+                      <div class="row">
+                        <div class="col-3 percent col-3-w">
+                          <span id="num-percent3"></span>
+                        </div>
+                        <div class="col-8 per-chart" id="chartContainer4_3"></div>
+                      </div>
+                    </div>
+                    <div class="fourth-chart">
+                      <div class="row">
+                        <div class="col-3 percent col-3-w">
+                          <span id="num-percent4"></span>
+                        </div>
+                        <div class="col-8 per-chart" id="chartContainer4_4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
     </div>
 </body>
+<script>
+    var number2 = 100;
+
+document.getElementById('num-percent').innerHTML = 'Without treatment:  ' + 10 + '%';
+
+
+document.getElementById('num-percent2').innerHTML = 'With effective treatment:  ' + 12 + '%';
+
+
+document.getElementById('num-percent3').innerHTML = 'Without treatment:' + 14 + '%';
+
+
+document.getElementById('num-percent4').innerHTML = 'With effective treatment:  ' + 16 + '%';
+
+////////////blue////////////////
+for (var i = 1; i <= 100; i++) {
+  var cach = i % 5;
+  if (i <= 10) {
+    var verti1 = document.createElement("IMG");
+    verti1.setAttribute("src", "SVG/rect2.svg");
+    verti1.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4").appendChild(verti1);
+  }
+  else {
+    var verti2 = document.createElement("IMG");
+    verti2.setAttribute("src", "SVG/rect.svg");
+    verti2.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4").appendChild(verti2);
+  };
+
+  if (cach == 0) {
+    var sp = document.createTextNode(" ");
+    document.getElementById("chartContainer4").appendChild(sp);
+  }
+}
+////////////purple////////////
+for (var i = 1; i <= 100; i++) {
+  var cach = i % 5;
+  if (i <= 12) {
+    var verti1 = document.createElement("IMG");
+    verti1.setAttribute("src", "SVG/rect3.svg");
+    verti1.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4_2").appendChild(verti1);
+  }
+  else {
+    var verti2 = document.createElement("IMG");
+    verti2.setAttribute("src", "SVG/rect.svg");
+    verti2.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4_2").appendChild(verti2);
+  };
+
+  if (cach == 0) {
+    var sp = document.createTextNode(" ");
+    document.getElementById("chartContainer4_2").appendChild(sp);
+  }
+}
+/////////////////
+for (var i = 1; i <= 100; i++) {
+  var cach = i % 5;
+  if (i <= 14) {
+    var verti1 = document.createElement("IMG");
+    verti1.setAttribute("src", "SVG/rect2.svg");
+    verti1.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4_3").appendChild(verti1);
+  }
+  else {
+    var verti2 = document.createElement("IMG");
+    verti2.setAttribute("src", "SVG/rect.svg");
+    verti2.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4_3").appendChild(verti2);
+  };
+
+  if (cach == 0) {
+    var sp = document.createTextNode(" ");
+    document.getElementById("chartContainer4_3").appendChild(sp);
+  }
+}
+/////////////pink///////////////
+for (var i = 1; i <= 100; i++) {
+  var cach = i % 5;
+  if (i <= 16) {
+    var verti1 = document.createElement("IMG");
+    verti1.setAttribute("src", "SVG/rect3.svg");
+    verti1.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4_4").appendChild(verti1);
+  }
+  else {
+    var verti2 = document.createElement("IMG");
+    verti2.setAttribute("src", "SVG/rect.svg");
+    verti2.setAttribute("id", "v-img");
+    document.getElementById("chartContainer4_4").appendChild(verti2);
+  };
+
+  if (cach == 0) {
+    var sp = document.createTextNode(" ");
+    document.getElementById("chartContainer4_4").appendChild(sp);
+  }
+}
+</script>
 </html>
