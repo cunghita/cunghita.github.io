@@ -105,6 +105,51 @@
                 </div>
               </div>
         </div>
+        <div class="value">
+          <div id="second-chart" class="panel-light">
+            <div id="tm-gallery-page-hình" class="tm-gallery-page row1">
+              <div class="form-horizontal">
+                <div class="interpret">
+                  <h2>Interpretation of your fracture risk</h2>
+                </div>
+              </div>
+              <div class="">
+                <div class="col-12" style="margin-bottom: 30px; font-size: 18px;">
+                  <span class="any-frac">Your 5-year risk of any fracture: <span id="any-percent"></span></span>
+                  <br>
+                  <span class="dtl-frac">
+                    Among 100 men/women like you, <span id="any-number"></span> will suffer a fracture in the next 5 years,
+                    and <span id="not-any-number"></span> will not.
+                  </span>
+                  </span>
+                </div>
+                <div style="display: flex;justify-content: space-around; margin-bottom: 0px;">
+                  <div id="chartContainer3">
+      
+                  </div>
+                </div>
+              </div>
+              
+              <div class="">
+                <div class="col-12" style="margin-bottom: 30px; font-size: 18px;">
+                  <span class="any-frac">Your 5-year risk of hip fracture: <span id="hip-percent"></span></span>
+                  <br>
+                  <span class="dtl-frac">
+                    Among 100 men/women like you, <span id="hip-number"></span> will suffer a hip fracture in the next 5
+                    years, and <span id="not-hip-number"></span> will not.
+                  </span>
+                  </span>
+                </div>
+                <div style="display: flex;justify-content: space-around;">
+                  <div id="chartContainer3-2" class="">
+              
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
     </div>
 </body>
 <script>
@@ -205,5 +250,70 @@ for (var i = 1; i <= 100; i++) {
     document.getElementById("chartContainer4_4").appendChild(sp);
   }
 }
+      var broke = 100 - 10;
+      document.getElementById("any-percent").innerHTML = 10+ "%";
+      document.getElementById("any-number").innerHTML = 10;
+      document.getElementById("not-any-number").innerHTML = broke;
+      var tb5_hip = Math.round(10, 1);
+      var t = document.getElementById("p-img");
+      if (t == null) {
+        for (var i = 0; i < 10 * 10; i++) {
+          var row = i / 10;
+          var col = i % 10;
+          if (col == 0 && row > 0) {
+            
+            var para3 = document.createElement("DIV");
+            para3.setAttribute("style", "clear:both");
+            document.getElementById("chartContainer3").appendChild(para3);
+          }
+          if (i < tb5_hip) {
+           
+            var para = document.createElement("IMG");
+            para.setAttribute("src", "img/new_p.png");
+            para.setAttribute("id", "p-img");
+            document.getElementById("chartContainer3").appendChild(para);
+          } else {
+            
+            var para2 = document.createElement("IMG");
+            para2.setAttribute("src", "img/new_b.png");
+            para2.setAttribute("id", "p-img");
+            document.getElementById("chartContainer3").appendChild(para2);
+          }
+        }
+      }
+
+   
+      ////////////chart3.2/////////////////////////////
+      var broke3 = 100 - 12;
+      document.getElementById("hip-percent").innerHTML = 12 + "%";
+      document.getElementById("hip-number").innerHTML = 12;
+      document.getElementById("not-hip-number").innerHTML = broke3;
+
+      var tb5_any = Math.round(12, 1);
+      var t2 = document.getElementById("p2-img");
+      if (t2 == null) {
+        // var y3 = document.getElementById("name").value;
+        for (var i = 0; i < 10 * 10; i++) {
+          var row2 = i / 10;
+          var col2 = i % 10;
+          if (col2 == 0 && row2 > 0) {
+            var para3_1_1 = document.createElement("DIV");
+            para3_1_1.setAttribute("style", "clear:both");
+            document.getElementById("chartContainer3-2").appendChild(para3_1_1);
+          }
+          //  if (i < (100-tb5_any)) 
+          if (i < tb5_any) {
+            var para3_2_2 = document.createElement("IMG");
+            para3_2_2.setAttribute("src", "img/new_p.png");
+            para3_2_2.setAttribute("id", "p2-img");
+            document.getElementById("chartContainer3-2").appendChild(para3_2_2);
+          } else {
+            var para3_3_3 = document.createElement("IMG");
+            para3_3_3.setAttribute("src", "img/new_b.png");
+            para3_3_3.setAttribute("id", "p2-img");
+            document.getElementById("chartContainer3-2").appendChild(para3_3_3);
+          }
+        }
+      }
 </script>
 </html>
