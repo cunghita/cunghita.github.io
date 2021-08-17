@@ -472,39 +472,39 @@
     <div class="infomation-result hidden-print">
       <h2>Result</h2>
       <div class="value1">
-          <p>Full Name: <p></p></p>
+          <p>Full Name: <span id="print-name"></span></p>
       </div>
       <div class="value">
-          <p>Age: <p></p></p>
+          <p>Age: <span id="pỉnt-age"></span></p>
       </div>
       <div class="value">
-          <p>Gender: <p></p></p>
+          <p>Gender: <span id="print-gender"></span></p>
       </div>
       <div class="value">
-          <p>Height: <p></p></p>
+          <p>Height: <span id="print-height"></span></p>
       </div>
       <div class="value">
-          <p>Weight: <p></p></p>
+          <p>Weight: <span id="print-weight"></span></p>
       </div>
       <div class="value">
-          <p>Fractures since the age of 50: <p></p></p>
+          <p>Fractures since the age of 50: <span id="print-frac50"></span></p>
       </div>
       <div class="value">
-          <p>Falls over last 12 months: <p></p></p>
+          <p>Falls over last 12 months: <span id="print-fall"></span></p>
       </div>
       <div class="value">
-          <p>T-scores: <p></p></p>
+          <p>T-scores: <span id="print-Tscore"></span></p>
       </div>
       <div class="value1 actual-bmd">
           <div>
-              <p>Actual BMD: <p></p></p>
+              <p>Actual BMD: <span id="print-BMD"></span></p>
           </div>
           <div>
-              <p>Densitometer: <span>by DXA GE Lunar</span></p>
+              <p>Densitometer: <span id="print-densitometer"></span></p>
           </div>     
       </div>
       <div class="value">
-          <p>Diseases: <span>Cardiovascular disease</span></p>
+          <p>Diseases: <span id="print-diseases">Cardiovascular disease</span></p>
       </div>
       <div class="value">
           <p>Disclaimer: 
@@ -733,6 +733,94 @@
                 if(ele3[i].checked)
                 var bmd = ele3[i].value;
             }
+
+            var disea1 = document.getElementsByName('Cardiovascular');
+            for(i = 0; i < disea1.length; i++) {
+                if(disea1[i].checked)
+                var disea1_1 = disea1[i].value;
+                if(disea1_1 == "yes1")
+                {
+                  disea1_1 = "Cardiovascular";
+                }
+                else
+                {
+                  disea1_1 = "";
+                }
+            }
+
+            var disea2 = document.getElementsByName('cancer');
+            for(i = 0; i < disea2.length; i++) {
+                if(disea2[i].checked)
+                var disea2_2 = disea2[i].value;
+                if(disea2_2 == "yes2")
+                {
+                  disea2_2 = "Cancer";
+                }
+                else
+                {
+                  disea2_2 = "";
+                }
+            }
+            
+            var disea3 = document.getElementsByName('Type_2_diabetes');
+            for(i = 0; i < disea3.length; i++) {
+                if(disea3[i].checked)
+                var disea3_3 = disea3[i].value;
+                if(disea3_3 == "yes3")
+                {
+                  disea3_3 = "Type 2 diabetes";
+                }
+                else
+                {
+                  disea3_3 = "";
+                }
+            }
+
+            var disea4 = document.getElementsByName('Neuromuscular');
+            for(i = 0; i < disea4.length; i++) {
+                if(disea4[i].checked)
+                var disea4_4 = disea4[i].value;
+                if(disea4_4 == "yes4")
+                {
+                  disea4_4 = "Neuromuscular";
+                }
+                else
+                {
+                  disea4_4 = "";
+                }
+            }
+
+            var disea5 = document.getElementsByName('Rheumatoid_arthritis');
+            for(i = 0; i < disea5.length; i++) {
+                if(disea5[i].checked)
+                var disea5_5 = disea5[i].value;
+                if(disea5_5 == "yes5")
+                {
+                  disea5_5 = "Rheumatoid arthritis";
+                }
+                else
+                {
+                  disea5_5 = "";
+                }
+            }
+
+            var disea6 = document.getElementsByName('COPD');
+            for(i = 0; i < disea6.length; i++) {
+                if(disea6[i].checked)
+                var disea6_6 = disea6[i].value;
+                if(disea6_6 == "yes6")
+                {
+                  disea6_6 = "COPD";
+                }
+                else
+                {
+                  disea6_6 = "";
+                }
+            }
+
+           let diseaArr = [disea1_1,disea2_2,disea3_3,disea4_4,disea5_5,disea6_6];
+           document.getElementById("print-diseases").innerHTML = diseaArr.join('  ');
+           
 
             if(gender == "wo" && actual != '' && bmd == "Lunar" && tscore == ''){
               // tscore = Math.round(((actual - 1)/0.12));
