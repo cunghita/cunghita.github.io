@@ -84,7 +84,7 @@
           <div class="name-input">
             <div class="form-group">
               <h3 class="lb-input">Full Name (optional)</h3>
-              <input class="predict-input" type="text" style="width:12.75em;">
+              <input class="predict-input" id="name" type="text" style="width:12.75em;">
             </div>
           </div>
           <div class="name-input">
@@ -475,7 +475,7 @@
           <p>Full Name: <span id="print-name"></span></p>
       </div>
       <div class="value">
-          <p>Age: <span id="pỉnt-age"></span></p>
+          <p>Age: <span id="print-age"></span></p>
       </div>
       <div class="value">
           <p>Gender: <span id="print-gender"></span></p>
@@ -504,7 +504,7 @@
           </div>     
       </div>
       <div class="value">
-          <p>Diseases: <span id="print-diseases">Cardiovascular disease</span></p>
+          <p>Diseases: <span id="print-diseases"></span></p>
       </div>
       <div class="value">
           <p>Disclaimer: 
@@ -714,13 +714,25 @@
     function Result() {
 
       document.getElementById("Print-btn").classList.remove("hidden");
+      var full_name  = document.getElementById("name").value;
       var age = document.getElementById("age").value;
           var tscore = document.getElementById("T-score").value;
           var wei = document.getElementById("weight").value;
+          var height = document.getElementById("height").value;
           var pfx = document.getElementById("Fra-50").value;
           var fall = document.getElementById("Fall-12").value;
           var checkbox = document.getElementById("disclaimer");
           var actual = document.getElementById("BMD").value;
+
+
+          document.getElementById("print-age").innerHTML = age;
+          document.getElementById("print-name").innerHTML = full_name;
+          document.getElementById("print-Tscore").innerHTML = tscore;
+          document.getElementById("print-weight").innerHTML = wei;
+          document.getElementById("print-height").innerHTML = height;
+          document.getElementById("print-frac50").innerHTML = pfx;
+          document.getElementById("print-fall").innerHTML = fall;
+          document.getElementById("print-BMD").innerHTML = actual;
 
           var ele = document.getElementsByName('gender');     
             for(i = 0; i < ele.length; i++) {
@@ -732,6 +744,24 @@
             for(i = 0; i < ele3.length; i++) {
                 if(ele3[i].checked)
                 var bmd = ele3[i].value;
+            }
+
+            if(gender == "men")
+            {
+              document.getElementById("print-gender").innerHTML = "Male";
+            }
+            else
+            {
+              document.getElementById("print-gender").innerHTML = "Female";
+            }
+
+            if(bmd == "DXA_GE")
+            {
+              document.getElementById("print-densitometer").innerHTML = "by DXA GE Lunar";
+            }
+            else
+            {
+              document.getElementById("print-densitometer").innerHTML = "by DXA Hologic";
             }
 
             var disea1 = document.getElementsByName('Cardiovascular');
@@ -1016,6 +1046,7 @@
            var risk5_any_heal = risk5_any_sr.toFixed(m);
           }
       
+          
 
           document.getElementById("result-page").classList.remove("hidden");
     document.getElementById("bone-page-form").classList.add("hidden");
